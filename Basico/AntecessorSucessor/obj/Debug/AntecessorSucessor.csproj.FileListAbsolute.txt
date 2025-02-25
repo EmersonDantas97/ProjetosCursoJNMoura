@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\bin\Debug\AntecessorSucessor.exe.config
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\bin\Debug\AntecessorSucessor.exe
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\bin\Debug\AntecessorSucessor.pdb
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\obj\Debug\AntecessorSucessor.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\obj\Debug\AntecessorSucessor.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\obj\Debug\AntecessorSucessor.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\obj\Debug\AntecessorSucessor.exe
+D:\EMERSON\Curso JN Moura\Basico\AntecessorSucessor\obj\Debug\AntecessorSucessor.pdb
