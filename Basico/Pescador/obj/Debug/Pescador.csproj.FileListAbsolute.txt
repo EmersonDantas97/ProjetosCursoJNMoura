@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\bin\Debug\Pescador.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\bin\Debug\Pescador.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\bin\Debug\Pescador.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\obj\Debug\Pescador.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\obj\Debug\Pescador.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\obj\Debug\Pescador.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\obj\Debug\Pescador.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Pescador\obj\Debug\Pescador.pdb

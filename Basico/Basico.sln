@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senha", "Senha\Senha.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparacaoNumeros", "ComparacaoNumeros\ComparacaoNumeros.csproj", "{514B772B-2CE1-4897-A592-BF9A5A741F7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pescador", "Pescador\Pescador.csproj", "{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{514B772B-2CE1-4897-A592-BF9A5A741F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{514B772B-2CE1-4897-A592-BF9A5A741F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{514B772B-2CE1-4897-A592-BF9A5A741F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
