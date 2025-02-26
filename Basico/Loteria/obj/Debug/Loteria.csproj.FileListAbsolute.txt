@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Basico\Loteria\bin\Debug\Loteria.exe.config
+D:\EMERSON\Curso JN Moura\Basico\Loteria\bin\Debug\Loteria.exe
+D:\EMERSON\Curso JN Moura\Basico\Loteria\bin\Debug\Loteria.pdb
+D:\EMERSON\Curso JN Moura\Basico\Loteria\obj\Debug\Loteria.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Basico\Loteria\obj\Debug\Loteria.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Basico\Loteria\obj\Debug\Loteria.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Basico\Loteria\obj\Debug\Loteria.exe
+D:\EMERSON\Curso JN Moura\Basico\Loteria\obj\Debug\Loteria.pdb

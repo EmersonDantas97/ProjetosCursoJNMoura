@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; // .Net
 
 namespace Calculadora
 {
@@ -36,5 +36,5 @@ namespace Calculadora
     }
 }
 
-
+// Int32 x = 0; E um tipo do framework. E a mesma coisa que o int, pois ambos tem 32 bits (4 bytes). Se vir nulo, o .Parse dá problema e o Convert vai transformar em zero.
 // Estudar sobre breakpoint e modo de debug ou depuracao.

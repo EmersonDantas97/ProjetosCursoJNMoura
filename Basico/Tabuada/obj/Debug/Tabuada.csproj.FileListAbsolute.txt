@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\bin\Debug\Tabuada.exe.config
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\bin\Debug\Tabuada.exe
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\bin\Debug\Tabuada.pdb
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\obj\Debug\Tabuada.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\obj\Debug\Tabuada.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\obj\Debug\Tabuada.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\obj\Debug\Tabuada.exe
+D:\EMERSON\Curso JN Moura\Basico\Tabuada\obj\Debug\Tabuada.pdb

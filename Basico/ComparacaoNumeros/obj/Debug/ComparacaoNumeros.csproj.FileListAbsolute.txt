@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\bin\Debug\ComparacaoNumeros.exe.config
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\bin\Debug\ComparacaoNumeros.exe
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\bin\Debug\ComparacaoNumeros.pdb
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\obj\Debug\ComparacaoNumeros.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\obj\Debug\ComparacaoNumeros.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\obj\Debug\ComparacaoNumeros.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\obj\Debug\ComparacaoNumeros.exe
+D:\EMERSON\Curso JN Moura\Basico\ComparacaoNumeros\obj\Debug\ComparacaoNumeros.pdb

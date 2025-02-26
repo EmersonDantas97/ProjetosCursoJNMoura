@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Basico\Senha\bin\Debug\Senha.exe.config
+D:\EMERSON\Curso JN Moura\Basico\Senha\bin\Debug\Senha.exe
+D:\EMERSON\Curso JN Moura\Basico\Senha\bin\Debug\Senha.pdb
+D:\EMERSON\Curso JN Moura\Basico\Senha\obj\Debug\Senha.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Basico\Senha\obj\Debug\Senha.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Basico\Senha\obj\Debug\Senha.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Basico\Senha\obj\Debug\Senha.exe
+D:\EMERSON\Curso JN Moura\Basico\Senha\obj\Debug\Senha.pdb
