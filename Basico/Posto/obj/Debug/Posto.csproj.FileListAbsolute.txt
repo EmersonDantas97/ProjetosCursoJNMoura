@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\bin\Debug\Posto.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\bin\Debug\Posto.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\bin\Debug\Posto.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\obj\Debug\Posto.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\obj\Debug\Posto.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\obj\Debug\Posto.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\obj\Debug\Posto.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Posto\obj\Debug\Posto.pdb
