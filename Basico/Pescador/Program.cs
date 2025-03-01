@@ -20,12 +20,22 @@ namespace Pescador
     {
         static void Main(string[] args)
         {
+            /*
+                 Eu poderia também ter declarado as variaveis da seguinte maneira (o professor fez desta maneira):
+
+                 const double pesoMaximoPermitidoEmKg = 50.00; // Variavel somente leitura.
+                 const double multaPorKgExcedido = 4.00; // Variavel somente leitura.
+
+                 double pesoExcedidoEmKg = 0;
+                 double multaPagaPeloPescador = 0;
+            */
+
             Console.WriteLine("------- PESCADOR");
 
             Console.Write("\n Informe o peso do peixe em Kg: ");
             double pesoPeixe = double.Parse(Console.ReadLine());
 
-            double pesoExcedente = pesoPeixe - 50;
+            double pesoExcedente = pesoPeixe - 50; // Depois da aula, professor orientou a não proceder desta maneira! Sempre declarar nome aos valores, para ficar facil a leitura.
             double valorMulta = 4.00;
 
             if (pesoPeixe > 50)

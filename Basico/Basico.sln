@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparacaoNumeros", "Compar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pescador", "Pescador\Pescador.csproj", "{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votacao", "Votacao\Votacao.csproj", "{69367398-5A48-4080-9D7F-5789C29BFFEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notas", "Notas\Notas.csproj", "{D203905B-6685-4D40-9615-88051EF0BD33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318FFEBF-2150-4318-8DF2-C91C3CA1A8D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69367398-5A48-4080-9D7F-5789C29BFFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69367398-5A48-4080-9D7F-5789C29BFFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69367398-5A48-4080-9D7F-5789C29BFFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69367398-5A48-4080-9D7F-5789C29BFFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D203905B-6685-4D40-9615-88051EF0BD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D203905B-6685-4D40-9615-88051EF0BD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D203905B-6685-4D40-9615-88051EF0BD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D203905B-6685-4D40-9615-88051EF0BD33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

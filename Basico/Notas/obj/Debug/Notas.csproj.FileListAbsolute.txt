@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\bin\Debug\Notas.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\bin\Debug\Notas.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\bin\Debug\Notas.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\obj\Debug\Notas.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\obj\Debug\Notas.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\obj\Debug\Notas.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\obj\Debug\Notas.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Notas\obj\Debug\Notas.pdb

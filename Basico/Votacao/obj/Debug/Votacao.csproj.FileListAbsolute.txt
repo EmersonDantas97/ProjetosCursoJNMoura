@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\bin\Debug\Votacao.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\bin\Debug\Votacao.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\bin\Debug\Votacao.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\obj\Debug\Votacao.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\obj\Debug\Votacao.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\obj\Debug\Votacao.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\obj\Debug\Votacao.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Votacao\obj\Debug\Votacao.pdb
