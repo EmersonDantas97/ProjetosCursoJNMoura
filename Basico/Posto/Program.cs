@@ -59,7 +59,7 @@ namespace Posto
                 case 1:
                     totalAPagarSemDesconto = precoLitroEtanol * qtdLitrosVaiAbastecer;
 
-                    if (opcaoEscolhidaDeCombustivel < qtdDeLtsEtanolParaReceberDescontoMaior)
+                    if (qtdLitrosVaiAbastecer < qtdDeLtsEtanolParaReceberDescontoMaior)
                         descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalEtanol1;
                     else
                         descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalEtanol2;
@@ -69,7 +69,7 @@ namespace Posto
                 case 2:
                     totalAPagarSemDesconto = precoLitroGasolina * qtdLitrosVaiAbastecer;
 
-                    if (opcaoEscolhidaDeCombustivel < qtdDeLtsGasolinaParaReceberDescontoMaior)
+                    if (qtdLitrosVaiAbastecer < qtdDeLtsGasolinaParaReceberDescontoMaior)
                         descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalGasolina1;
                     else
                         descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalGasolina2;
