@@ -30,6 +30,35 @@ namespace Salario
     {
         static void Main(string[] args)
         {
+
+            const double descontoImpostoRenda = 0.11;
+            const double descontoINSS = 0.08;
+            const double descontoSindicato = 0.05;
+
+
+            Console.WriteLine("\n--------- CALCULO DE SALÁRIO");
+
+            Console.Write("\nDigite o valor que você recebe por hora: ");
+            double salarioPorHora = double.Parse(Console.ReadLine());
+
+            Console.Write("\nDigite a quantidade de horas trabalhadas no mês: ");
+            int horasTrabalhadasNoMes = int.Parse(Console.ReadLine());
+
+            double salarioBruto = salarioPorHora * horasTrabalhadasNoMes;
+            double valorDescontoImpostoRendaEmRS = salarioBruto * descontoImpostoRenda;
+            double valorDescontoINSSEmRS = salarioBruto * descontoINSS;
+            double valorDescontoSindicatoEmRS = salarioBruto * descontoSindicato;
+            double descontosTotais = valorDescontoImpostoRendaEmRS + valorDescontoINSSEmRS + valorDescontoSindicatoEmRS;
+            double salarioLiquido = salarioBruto - descontosTotais;
+
+            Console.WriteLine($"\n+ Salário Bruto : R$ {salarioBruto:0.00}");
+            Console.WriteLine($"- IR (11%) : R$ {valorDescontoImpostoRendaEmRS:0.00}");
+            Console.WriteLine($"- INSS (8%) : R$ {valorDescontoINSSEmRS:0.00}");
+            Console.WriteLine($"- Sindicato (5%) : R$ {valorDescontoSindicatoEmRS:0.00}");
+            Console.WriteLine($"= Salário Liquido : R$ {salarioLiquido:0.00}");
+
+            Console.Write("\nPressione ENTER para finalizar o programa!");
+            Console.ReadLine();
         }
     }
 }

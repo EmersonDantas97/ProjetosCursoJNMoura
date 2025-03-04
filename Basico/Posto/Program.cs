@@ -39,7 +39,6 @@ namespace Posto
 
             double qtdDeLtsEtanolParaReceberDescontoMaior = 20.00;
             double qtdDeLtsGasolinaParaReceberDescontoMaior = 20.00;
-
             
             Console.WriteLine("\n--------- JOGO DE POSTO");
 
@@ -60,9 +59,9 @@ namespace Posto
                     totalAPagarSemDesconto = precoLitroEtanol * qtdLitrosVaiAbastecer;
 
                     if (qtdLitrosVaiAbastecer < qtdDeLtsEtanolParaReceberDescontoMaior)
-                        descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalEtanol1;
+                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalEtanol1;
                     else
-                        descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalEtanol2;
+                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalEtanol2;
 
                     break;
                 
@@ -70,9 +69,9 @@ namespace Posto
                     totalAPagarSemDesconto = precoLitroGasolina * qtdLitrosVaiAbastecer;
 
                     if (qtdLitrosVaiAbastecer < qtdDeLtsGasolinaParaReceberDescontoMaior)
-                        descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalGasolina1;
+                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalGasolina1;
                     else
-                        descontoRecebido = qtdLitrosVaiAbastecer * descontoPromocionalGasolina2;
+                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalGasolina2;
 
                     break;
 

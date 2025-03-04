@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\bin\Debug\Salario.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\bin\Debug\Salario.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\bin\Debug\Salario.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\obj\Debug\Salario.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\obj\Debug\Salario.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\obj\Debug\Salario.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\obj\Debug\Salario.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Salario\obj\Debug\Salario.pdb
