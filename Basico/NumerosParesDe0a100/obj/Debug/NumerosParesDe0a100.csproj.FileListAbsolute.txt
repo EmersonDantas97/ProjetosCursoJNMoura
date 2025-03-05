@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\bin\Debug\NumerosParesDe0a100.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\bin\Debug\NumerosParesDe0a100.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\bin\Debug\NumerosParesDe0a100.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\obj\Debug\NumerosParesDe0a100.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\obj\Debug\NumerosParesDe0a100.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\obj\Debug\NumerosParesDe0a100.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\obj\Debug\NumerosParesDe0a100.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\NumerosParesDe0a100\obj\Debug\NumerosParesDe0a100.pdb
