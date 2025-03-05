@@ -14,26 +14,35 @@ namespace Notas
         static void Main(string[] args)
         {
 
+            double nota1; 
+            double nota2; 
+            double nota3;
+            double mediaNotas;
+            const double mediaDeCorte = 7.00;
+
+            double numeroDeFaltas;
+            const double numeroDeAulas = 80;
+            double porcentagemFaltas;
+
+            const double presencaMinima = 0.25;
+
             Console.WriteLine("\n--------- NOTAS");
 
             Console.Write("\nDigite o valor da nota 1: ");
-            double nota1 = int.Parse(Console.ReadLine());
+            nota1 = double.Parse(Console.ReadLine());
 
             Console.Write("Digite o valor da nota 2: ");
-            double nota2 = int.Parse(Console.ReadLine());
+            nota2 = double.Parse(Console.ReadLine());
 
             Console.Write("Digite o valor da nota 3: ");
-            double nota3 = int.Parse(Console.ReadLine());
+            nota3 = double.Parse(Console.ReadLine());
 
             Console.Write("Digite numero de faltas: ");
-            double numeroDeFaltas = int.Parse(Console.ReadLine());
+            numeroDeFaltas = int.Parse(Console.ReadLine());
             
-            const double numeroDeAulas = 80;
-            double porcentagemFaltas = numeroDeFaltas / numeroDeAulas;
-            const double presencaMinima = 0.25;
-
-            double mediaNotas = (nota1 + nota2 + nota3) / 3;
-            const double mediaDeCorte = 7.00;
+            porcentagemFaltas = numeroDeFaltas / numeroDeAulas;
+                        
+            mediaNotas = (nota1 + nota2 + nota3) / 3;
 
             if (porcentagemFaltas > presencaMinima)
                 Console.WriteLine("\n Aluno foi REPROVADO POR FALTA!");

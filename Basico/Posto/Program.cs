@@ -28,9 +28,6 @@ namespace Posto
             const double precoLitroGasolina = 6.10;
             const double precoLitroEtanol = 4.20;
 
-            double descontoRecebido;
-            double totalAPagarSemDesconto;
-
             double descontoPromocionalEtanol1 = 0.02;
             double descontoPromocionalEtanol2 = 0.05;
 
@@ -39,55 +36,63 @@ namespace Posto
 
             double qtdDeLtsEtanolParaReceberDescontoMaior = 20.00;
             double qtdDeLtsGasolinaParaReceberDescontoMaior = 20.00;
+
+            int opcaoEscolhidaDeCombustivel;
+            double qtdLitrosVaiAbastecer;
             
+            double descontoRecebido;
+
+            double totalAPagarSemDesconto;
+            double totalASerPagoComDesconto;
+
+            const int OpcaoAlcool = 1;
+            const int OpcaoGasolina = 2;
+
+
             Console.WriteLine("\n--------- JOGO DE POSTO");
 
             Console.WriteLine("\nDigite a opção correspondente a qual combustível deseja abastecer: ");
 
-            Console.WriteLine("\n 1 - Etanol");
-            Console.WriteLine(" 2 - Gasolina");
+            Console.WriteLine("\n 1-álcool");
+            Console.WriteLine(" 2-gasolina");
             
             Console.Write("\nDigite a opção desejada: ");
-            int opcaoEscolhidaDeCombustivel = int.Parse(Console.ReadLine());
+            opcaoEscolhidaDeCombustivel = int.Parse(Console.ReadLine());
 
             Console.Write("\nDigite quantos litros deseja abastecer: ");
-            double qtdLitrosVaiAbastecer = double.Parse(Console.ReadLine());
+            qtdLitrosVaiAbastecer = double.Parse(Console.ReadLine());
 
-            switch (opcaoEscolhidaDeCombustivel)
+            if (opcaoEscolhidaDeCombustivel == OpcaoAlcool)
             {
-                case 1:
-                    totalAPagarSemDesconto = precoLitroEtanol * qtdLitrosVaiAbastecer;
+                totalAPagarSemDesconto = precoLitroEtanol * qtdLitrosVaiAbastecer;
 
-                    if (qtdLitrosVaiAbastecer < qtdDeLtsEtanolParaReceberDescontoMaior)
-                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalEtanol1;
-                    else
-                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalEtanol2;
-
-                    break;
-                
-                case 2:
-                    totalAPagarSemDesconto = precoLitroGasolina * qtdLitrosVaiAbastecer;
-
-                    if (qtdLitrosVaiAbastecer < qtdDeLtsGasolinaParaReceberDescontoMaior)
-                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalGasolina1;
-                    else
-                        descontoRecebido = totalAPagarSemDesconto * descontoPromocionalGasolina2;
-
-                    break;
-
-                default:
-                    Console.WriteLine("\nOpção digitada INVÁLIDA! Verifique as opções acima e TENTE NOVAMENTE!");
-                    Console.Write("\nPressione ENTER para finalizar o programa!");
-                    Console.ReadLine();
-                    return;
-
+                descontoRecebido = (qtdLitrosVaiAbastecer <= qtdDeLtsEtanolParaReceberDescontoMaior) // Utilizacao de operador ternario.
+                    ? totalAPagarSemDesconto * descontoPromocionalEtanol1
+                    : totalAPagarSemDesconto * descontoPromocionalEtanol2;
             }
+            else if (opcaoEscolhidaDeCombustivel == OpcaoGasolina)
+            {
+                totalAPagarSemDesconto = precoLitroGasolina * qtdLitrosVaiAbastecer;
+
+                descontoRecebido = (qtdLitrosVaiAbastecer <= qtdDeLtsGasolinaParaReceberDescontoMaior)
+                    ? totalAPagarSemDesconto * descontoPromocionalGasolina1
+                    : totalAPagarSemDesconto * descontoPromocionalGasolina2;
+            }
+            else
+            {
+                Console.WriteLine("\nOpção digitada INVÁLIDA! Verifique as opções acima e TENTE NOVAMENTE!"); // Esta mensagem, por nao estar nos requisitos, precisa ser confirmada por quem solicitou.
+                Console.Write("\nPressione ENTER para finalizar o programa!");
+                Console.ReadLine();
+                return;
+            }
+
+            totalASerPagoComDesconto = totalAPagarSemDesconto - descontoRecebido;
 
             Console.WriteLine("\n--------- RESUMO FATURA:");
 
-            Console.WriteLine($"\n  - TOTAL: R$ {totalAPagarSemDesconto:0.00}.");
-            Console.WriteLine($"  - DESCONTO: R$ {descontoRecebido:0.00}.");
-            Console.WriteLine($"  - TOTAL A SER PAGO: R$ {totalAPagarSemDesconto - descontoRecebido:0.00}.");
+            Console.WriteLine($"\n\t- TOTAL GERAL: R$ {totalAPagarSemDesconto:0.00}.");
+            Console.WriteLine($"\t- DESCONTO: R$ {descontoRecebido:0.00}.");
+            Console.WriteLine($"\t- TOTAL A SER PAGO: R$ {totalASerPagoComDesconto:0.00}.");
 
             Console.Write("\nPressione ENTER para finalizar o programa!");
             Console.ReadLine();
