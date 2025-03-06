@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\bin\Debug\Elevador.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\bin\Debug\Elevador.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\bin\Debug\Elevador.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\obj\Debug\Elevador.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\obj\Debug\Elevador.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\obj\Debug\Elevador.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\obj\Debug\Elevador.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Elevador\obj\Debug\Elevador.pdb

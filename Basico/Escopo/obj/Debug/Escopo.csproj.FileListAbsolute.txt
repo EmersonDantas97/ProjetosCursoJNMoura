@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\bin\Debug\Escopo.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\bin\Debug\Escopo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\bin\Debug\Escopo.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\obj\Debug\Escopo.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\obj\Debug\Escopo.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\obj\Debug\Escopo.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\obj\Debug\Escopo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Basico\Escopo\obj\Debug\Escopo.pdb

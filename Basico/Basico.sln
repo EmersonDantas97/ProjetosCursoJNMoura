@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salario", "Salario\Salario.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumerosParesDe0a100", "NumerosParesDe0a100\NumerosParesDe0a100.csproj", "{5B0DF35A-911D-4973-95F9-4D41318367A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escopo", "Escopo\Escopo.csproj", "{EA3AD0A9-795A-4833-87B9-E4CC34B11C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elevador", "Elevador\Elevador.csproj", "{58C71352-FAC0-4A8F-B04E-9B744B95041C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{5B0DF35A-911D-4973-95F9-4D41318367A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B0DF35A-911D-4973-95F9-4D41318367A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B0DF35A-911D-4973-95F9-4D41318367A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3AD0A9-795A-4833-87B9-E4CC34B11C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3AD0A9-795A-4833-87B9-E4CC34B11C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3AD0A9-795A-4833-87B9-E4CC34B11C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3AD0A9-795A-4833-87B9-E4CC34B11C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
