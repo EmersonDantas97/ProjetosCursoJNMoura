@@ -48,35 +48,73 @@ namespace Escopo
             #endregion
 
             #region "Teste de mesa 2"
+            //int i = 0, j = 0, x = 1; 
 
-            int i = 0, j = 0, x = 1; 
-
-            for (i = 0; i < 2;) 
-            {
-                for (j = 2; j > -1; j--) 
-                {
-                    x += i + j; //4, 5
-                }
-                i++;
-                do
-                {
-                    x += j;
-                    j++;
-                } while (j < 2);
-            }
-            while (x < 20)
-            {
-                x += 2;
-                if (x % 2 == 0)
-                {
-                    x--;
-                }
-            }
-
-            Console.WriteLine(x);
-            Console.WriteLine(j);
-            Console.WriteLine(i);
+            //for (i = 0; i < 2;) 
+            //{
+            //    for (j = 2; j > -1; j--) 
+            //    {
+            //        x += i + j; //4, 5
+            //    }
+            //    i++;
+            //    do
+            //    {
+            //        x += j;
+            //        j++;
+            //    } while (j < 2);
+            //}
+            //while (x < 20)
+            //{
+            //    x += 2;
+            //    if (x % 2 == 0)
+            //    {
+            //        x--;
+            //    }
+            //}
             #endregion
+
+            #region "Teste de mesa 3"
+
+            const int LIMITE = 7;
+
+            int a = 0, b = 0, c;
+            a = b + 1;
+            b = a;
+            c = b * 3 + 2;
+
+            for (; ; )
+            {
+                b = 0;
+                a++;
+                if (a % 5 == 0)
+                {
+                    break; //Interromper a estrutura de repetição -> FOR
+                }
+                b = c - 1;
+            }
+            do
+            {
+                c++;
+                a = c - b;
+            } while (c < LIMITE);
+
+            a = 1;
+
+            while (true)
+
+            {
+                a++;
+                if (a < LIMITE)
+                {
+                    break; // Interromper a estrutura de repetição -> WHILE
+                }
+            }
+
+            #endregion
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
         }
     }
 }

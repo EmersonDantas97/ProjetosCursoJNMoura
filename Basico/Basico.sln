@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escopo", "Escopo\Escopo.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elevador", "Elevador\Elevador.csproj", "{58C71352-FAC0-4A8F-B04E-9B744B95041C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj", "{2C941CB3-E2DD-4DEA-8F19-863881AFA303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C71352-FAC0-4A8F-B04E-9B744B95041C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C941CB3-E2DD-4DEA-8F19-863881AFA303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C941CB3-E2DD-4DEA-8F19-863881AFA303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C941CB3-E2DD-4DEA-8F19-863881AFA303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C941CB3-E2DD-4DEA-8F19-863881AFA303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
