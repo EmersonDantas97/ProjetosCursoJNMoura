@@ -75,46 +75,91 @@ namespace Escopo
 
             #region "Teste de mesa 3"
 
-            const int LIMITE = 7;
+            //const int LIMITE = 7;
 
-            int a = 0, b = 0, c;
-            a = b + 1;
-            b = a;
-            c = b * 3 + 2;
+            //int a = 0, b = 0, c;
+            //a = b + 1;
+            //b = a;
+            //c = b * 3 + 2;
 
-            for (; ; )
+            //for (; ; )
+            //{
+            //    b = 0;
+            //    a++;
+            //    if (a % 5 == 0)
+            //    {
+            //        break; //Interromper a estrutura de repetição -> FOR
+            //    }
+            //    b = c - 1;
+            //}
+            //do
+            //{
+            //    c++;
+            //    a = c - b;
+            //} while (c < LIMITE);
+
+            //a = 1;
+
+            //while (true)
+
+            //{
+            //    a++;
+            //    if (a < LIMITE)
+            //    {
+            //        break; // Interromper a estrutura de repetição -> WHILE
+            //    }
+            //}
+
+            #endregion
+
+            #region "Teste de mesa 4 - Utilização continue"
+
+            int y = 10;
+            for (int i = 0; i < 2; i++)
             {
-                b = 0;
-                a++;
-                if (a % 5 == 0)
+                for (int j = 0; j < 2; j++)
                 {
-                    break; //Interromper a estrutura de repetição -> FOR
-                }
-                b = c - 1;
-            }
-            do
-            {
-                c++;
-                a = c - b;
-            } while (c < LIMITE);
+                    if (j == 1)
+                        continue; // Vai para a proxima iteração.
 
-            a = 1;
-
-            while (true)
-
-            {
-                a++;
-                if (a < LIMITE)
-                {
-                    break; // Interromper a estrutura de repetição -> WHILE
+                    y += 3;
                 }
             }
+
+            // continue, break, return são operadores de controle de fluxo.
+
+            #endregion
+
+            #region "Teste de mesa 5 - Pré e pós incremento"
+
+            int a = 1;
+            int b = 2;
+            int c = 0;
+
+            //a++; // a = a + 1
+            //++a; // a = a + 1
+            //++b; // b = b + 1
+            //b++; // b = b + 1
+
+            //a = b++ * 3; // Vai fazer o incremento, depois da operação.
+            //a = b * 3;
+            //b = b + 1;
+
+            //a = ++b * 3;// Vai fazer o incremento, antes da operação.
+            //b = b + 1;
+            //a = b * 3;
+
+            a = b++ / 3 * 3;
+            // a = b = b / (3*3)
+            // a = b = b / 9
+            // a = b = b / 9
 
             #endregion
 
             Console.WriteLine(a);
             Console.WriteLine(b);
             Console.WriteLine(c);
+
         }
     }
 }

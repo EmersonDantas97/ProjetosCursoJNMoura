@@ -20,18 +20,7 @@ namespace Votacao
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\n--------- VOTACAO");
 
-
-            Console.WriteLine("\n  Digite 1 e pressione a tecla ENTER para: CANDIDATO_1");
-            Console.WriteLine("  Digite 2 e pressione a tecla ENTER para: CANDIDATO_2");
-            Console.WriteLine("  Digite 3 e pressione a tecla ENTER para: CANDIDATO_3");
-            Console.WriteLine("  Digite 4 e pressione a tecla ENTER para: CANDIDATO_4");
-            Console.WriteLine("  Digite 5 e pressione a tecla ENTER para: VOTO NULO");
-            Console.WriteLine("  Digite 6 e pressione a tecla ENTER para: VOTO BRANCO");
-
-            Console.Write("\nDigite seu voto: ");
-            int voto = int.Parse(Console.ReadLine());
 
             #region "Solução 01"
             /*
@@ -106,25 +95,82 @@ namespace Votacao
             const int votoNulo = 5;
             const int votoBranco = 6;
 
-            switch (voto) // Cria a tabela em memoria e vai direto ao ponto especifico. Faz só um teste lógico. 
+            int desejaVotarNovamente;
+            int contadorVotoBranco = 0;
+            int contadorVotoNulo = 0;
+            int contadorVotoCandidato = 0;
+            int contadorVotoInvalido = 0;
+            int opcaoSim = 1;
+
+            int qtdTotalDeVotos = 0;
+
+            do
             {
-                case candidato1:
-                case candidato2:
-                case candidato3:
-                case candidato4:
-                    Console.WriteLine("\n Voto contabilizado com SUCESSO...");
-                    break;
-                case votoBranco:
-                    Console.WriteLine("\n Voto BRANCO contabilizado...");
-                    break;
-                case votoNulo:
-                    Console.WriteLine("\n Voto NULO contabilizado...");
-                    break;
-                default:
-                    Console.WriteLine("\n Voto inválido! Verifique as opções acima e VOTE NOVAMENTE...");
-                    break;
-            }
-            #endregion
+                Console.WriteLine("\n--------- VOTACAO");
+
+                Console.WriteLine("\n  Digite 1 e pressione a tecla ENTER para: CANDIDATO_1");
+                Console.WriteLine("  Digite 2 e pressione a tecla ENTER para: CANDIDATO_2");
+                Console.WriteLine("  Digite 3 e pressione a tecla ENTER para: CANDIDATO_3");
+                Console.WriteLine("  Digite 4 e pressione a tecla ENTER para: CANDIDATO_4");
+                Console.WriteLine("  Digite 5 e pressione a tecla ENTER para: VOTO NULO");
+                Console.WriteLine("  Digite 6 e pressione a tecla ENTER para: VOTO BRANCO");
+
+                bool valorValido = false;
+                uint voto = 0;
+
+                do
+                {
+                    Console.Write("\nDigite seu voto: ");
+
+                    valorValido = uint.TryParse(Console.ReadLine(), out voto);
+
+                    if (!valorValido)
+                        Console.WriteLine("\n\tDigite um valor que é aceito pela urna!");
+
+                } while (!valorValido);
+
+                switch (voto) // Cria a tabela em memoria e vai direto ao ponto especifico. Faz só um teste lógico. 
+                {
+                    case candidato1:
+                    case candidato2:
+                    case candidato3:
+                    case candidato4:
+                        Console.WriteLine("\n Voto contabilizado com SUCESSO...\n");
+                        contadorVotoCandidato++;
+                        break;
+                    case votoBranco:
+                        Console.WriteLine("\n Voto BRANCO contabilizado...\n");
+                        contadorVotoBranco++;
+                        break;
+                    case votoNulo:
+                        Console.WriteLine("\n Voto NULO contabilizado...\n");
+                        contadorVotoNulo++;
+                        break;
+                    default:
+                        Console.WriteLine("\n Voto inválido! Verifique as opções acima e VOTE NOVAMENTE...\n");
+                        contadorVotoInvalido++;
+                        break;
+                }
+                #endregion
+
+                Console.Clear();
+
+                Console.Write("\n Deseja votar novamente? Digite '1' para SIM e '2' para NÃO: ");
+                desejaVotarNovamente = int.Parse(Console.ReadLine());
+
+                Console.Clear();
+
+            } while (desejaVotarNovamente == opcaoSim);
+
+            qtdTotalDeVotos = contadorVotoBranco + contadorVotoNulo + contadorVotoCandidato;
+
+            Console.WriteLine("\n--------- TOTAL VOTOS");
+
+            Console.WriteLine($"\n\tVotos em candidatos: {contadorVotoCandidato}");
+            Console.WriteLine($"\tVotos Nulos: {contadorVotoNulo}");
+            Console.WriteLine($"\tVotos Brancos: {contadorVotoBranco}");
+            Console.WriteLine($"\tVotos inválidos: {contadorVotoInvalido}");
+            Console.WriteLine($"\n\tQuantidade de votos válidos: {qtdTotalDeVotos}");
 
             Console.Write("\nPressione ENTER para finalizar o programa!");
             Console.ReadLine();
