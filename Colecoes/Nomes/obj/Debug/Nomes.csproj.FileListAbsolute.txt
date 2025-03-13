@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\bin\Debug\Nomes.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\bin\Debug\Nomes.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\bin\Debug\Nomes.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\obj\Debug\Nomes.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\obj\Debug\Nomes.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\obj\Debug\Nomes.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\obj\Debug\Nomes.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Nomes\obj\Debug\Nomes.pdb
