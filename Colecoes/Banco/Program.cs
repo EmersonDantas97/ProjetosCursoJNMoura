@@ -32,58 +32,169 @@ namespace Banco
             const int CHAMARSENHA = 2;
             const int IMPRIMIRFILA = 3;
             const int ENCERRARPROGRAMA = 4;
+            const int PRIMEIRASENHA = 1;
 
-            int senhasRetiradas = 0;
-            int senhasChamadas = 0;
+            int novaSenha = 0;                          // Armazena nova senha. Caso exceda o limite, é tomada decisões diferentes.
 
-            uint opcaoSelecionadaPeloCliente = 0;
+            const int EXCEDEULIMITESENHAS = QTDMAXIMASENHAS + 1;    //  Variavel criada para ficar mais facil leitura, caso exceda o limite de senhas permitidas
 
-            bool inseridoValorValido = false;
+            int qtdSenhasAtivas = 0;                    // Contador de senhas pendentes de serem chamadas
 
-            int ultimaSenhaChamada = 0;
+            int[] senhasPendentesDeSeremAtendidas = new int[QTDMAXIMASENHAS];   // Fila de atendimento
 
-           //int[] senhasRetiradas = new int[QTDMAXIMASENHAS];
-           //int[] senhasPossiveis = new int[QTDMAXIMASENHAS];
+            uint opcaoSelecionadaPeloCliente = 0;       // Opção que o cliente selecionara no menu
 
-            Console.WriteLine("\n--------- BANCO\n");
-            Console.WriteLine("Verifique as opções abaixo e selecione o serviço pressionando o seu número de correspondência: \n");
-            Console.WriteLine("\t1 - Pegar Senha ");
-            Console.WriteLine("\t2 - Chamar Senha ");
-            Console.WriteLine("\t3 - Imprimir fila ");
-            Console.WriteLine("\t4 - Encerrar o programa ");
+            bool repetePerguntaOpcao = false;           // Variavel para evitar ter que fazer o mesmo teste logico 2x.
 
-            // Fazendo validação para não permitir LETRAS e NÚMEROS
-            do
+
+            while (true)
             {
-                Console.Write("\nDigite o serviço desejado: ");
+                Console.WriteLine("\n--------- BANCO\n");
+                Console.WriteLine("Verifique as opções abaixo e selecione o serviço pressionando o seu número de correspondência: \n");
+                Console.WriteLine("\t1 - Pegar Senha ");
+                Console.WriteLine("\t2 - Chamar Senha ");
+                Console.WriteLine("\t3 - Imprimir fila ");
+                Console.WriteLine("\t4 - Encerrar o programa ");
 
-                inseridoValorValido = uint.TryParse(Console.ReadLine(), out opcaoSelecionadaPeloCliente);
+                // Fazendo validação para não permitir LETRAS e NÚMEROS
+                do
+                {
+                    Console.Write("\nDigite o serviço desejado: ");
 
-                if (!inseridoValorValido || opcaoSelecionadaPeloCliente < 1 || opcaoSelecionadaPeloCliente > 4)
-                    Console.WriteLine("\n\tDigite um valor VÁLIDO!");
+                    repetePerguntaOpcao = uint.TryParse(Console.ReadLine(), out opcaoSelecionadaPeloCliente);
 
-            } while (!inseridoValorValido || opcaoSelecionadaPeloCliente < 1 || opcaoSelecionadaPeloCliente > 4);
-            
-            // Processamento
-            switch (opcaoSelecionadaPeloCliente)
-            {
-                case PEGARSENHA:
-                    senhasRetiradas++;
-                    break;
-                case CHAMARSENHA:
-                    senhasChamadas++;
-                    break;
-                case IMPRIMIRFILA:
-                    break;
-                case ENCERRARPROGRAMA:
-                    break;
+                    repetePerguntaOpcao = !repetePerguntaOpcao || 
+                        opcaoSelecionadaPeloCliente < 1 || 
+                        opcaoSelecionadaPeloCliente > 4;
+                    
+                    if (repetePerguntaOpcao)
+                        Console.WriteLine("\n\tDigite um valor VÁLIDO!");
+
+                } while (repetePerguntaOpcao);
+
+
+                // Processamento
+                switch (opcaoSelecionadaPeloCliente)
+                {
+
+                    case PEGARSENHA:
+
+
+                        if (qtdSenhasAtivas == 0)
+                        {
+                            senhasPendentesDeSeremAtendidas[0] = novaSenha = PRIMEIRASENHA;
+                        } 
+                        else if (qtdSenhasAtivas == QTDMAXIMASENHAS)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\n--------- BANCO\n");
+                            Console.WriteLine($"\tNão é possível gerar uma nova senha! TENTE NOVAMENTE MAIS TARDE!");
+                            break;
+                        }
+                        else
+                        {
+                            for (int i = 0; i < QTDMAXIMASENHAS; i++)
+                            {
+                                if (senhasPendentesDeSeremAtendidas[i] == 0)
+                                {
+                                    novaSenha = senhasPendentesDeSeremAtendidas[i - 1] + 1;
+
+                                    if (novaSenha == EXCEDEULIMITESENHAS)
+                                        senhasPendentesDeSeremAtendidas[i] = novaSenha = PRIMEIRASENHA;
+
+                                    senhasPendentesDeSeremAtendidas[i] = novaSenha;
+
+                                    break;
+                                }
+                            }
+                        }
+
+                        qtdSenhasAtivas++;
+
+                        Console.Clear();
+                        Console.WriteLine("\n--------- BANCO\n");
+                        Console.WriteLine($"\tSUA SENHA É: {novaSenha}");
+
+                        break;
+
+                    case CHAMARSENHA:
+
+                        // Caso não tenha senhas pendentes de serem chamadas dá mensagem específica
+                        if (qtdSenhasAtivas == 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\n--------- BANCO\n");
+                            Console.WriteLine($"\tNÃO HÁ SENHAS EM ESPERA!");
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\n--------- BANCO\n");
+                            Console.WriteLine($"\tSENHA: {senhasPendentesDeSeremAtendidas[0]}\n\tCompareça ao guichê!");
+                            
+                            senhasPendentesDeSeremAtendidas[0] = 0;
+
+                            qtdSenhasAtivas--;
+
+                            // Reorganiza a fila
+                            for (int i = 0; i < qtdSenhasAtivas; i++)
+                            {
+                                senhasPendentesDeSeremAtendidas[i] = senhasPendentesDeSeremAtendidas[i + 1]; 
+                            }
+
+                            // Apagando ultimo registro do array, para evitar duplicidades
+                            if (qtdSenhasAtivas == 4)
+                                senhasPendentesDeSeremAtendidas[QTDMAXIMASENHAS - 1] = 0;
+                            else
+                                senhasPendentesDeSeremAtendidas[qtdSenhasAtivas] = 0;
+                        }
+                        break;
+
+                    case IMPRIMIRFILA:
+
+                        Console.Clear();
+                        Console.WriteLine("\n--------- BANCO\n");
+                        Console.WriteLine($"\tO banco está com {qtdSenhasAtivas} senhas em espera.");
+
+                        Console.Write($"\tAS SENHAS QUE ESTÃO AGUARDANDO SÃO: ");
+                        for (int i = 0; i < qtdSenhasAtivas; i++)
+                        {
+                            Console.Write($"{senhasPendentesDeSeremAtendidas[i]} ");
+                        }
+
+                        Console.WriteLine();
+
+                        break;
+
+                    case ENCERRARPROGRAMA:
+
+                        // Caso não tenha sido retirado senha, sai do programa.
+                        if (qtdSenhasAtivas == 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\n--------- BANCO\n");
+                            Console.Write("\tPrograma será encerrado!\n");
+                            Console.Write("\nPressione ENTER retornar para tela anterior!");
+                            Console.ReadLine();
+                            return;
+                        }
+                        // Caso tenhas senhas pendentes de serem atendidas, não sai do programa
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\n--------- BANCO\n");
+                            Console.Write("\tImpossível encerrar o programa! \n\n\tExistem senhas pendente de serem atendidas!\n");
+                        }
+                        break;
+                }
+
+                // Mensagem padrão para retornar para tela anterior
+                Console.Write("\nPressione ENTER retornar para tela anterior!");
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine();
+
             }
-
-            
-
-            Console.Write("\nPressione ENTER para finalizar o programa!");
-            Console.ReadLine();
-
         }
     }
 }
