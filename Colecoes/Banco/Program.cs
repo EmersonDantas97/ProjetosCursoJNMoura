@@ -50,7 +50,7 @@ namespace Banco
             while (true)
             {
                 Console.WriteLine("\n--------- BANCO\n");
-                Console.WriteLine("Verifique as opções abaixo e selecione o serviço pressionando o seu número de correspondência: \n");
+                Console.WriteLine("Verifique as opções abaixo e selecione o serviço, pressionando o seu número de correspondência: \n");
                 Console.WriteLine("\t1 - Pegar Senha ");
                 Console.WriteLine("\t2 - Chamar Senha ");
                 Console.WriteLine("\t3 - Imprimir fila ");
@@ -99,7 +99,7 @@ namespace Banco
                                 {
                                     novaSenha = senhasPendentesDeSeremAtendidas[i - 1] + 1;
 
-                                    if (novaSenha == EXCEDEULIMITESENHAS)
+                                    if (novaSenha >= EXCEDEULIMITESENHAS)
                                         senhasPendentesDeSeremAtendidas[i] = novaSenha = PRIMEIRASENHA;
 
                                     senhasPendentesDeSeremAtendidas[i] = novaSenha;

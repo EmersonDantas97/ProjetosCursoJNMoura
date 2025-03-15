@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\bin\Release\Banco.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\bin\Release\Banco.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\bin\Release\Banco.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\obj\Release\Banco.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\obj\Release\Banco.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\obj\Release\Banco.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\obj\Release\Banco.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Banco\obj\Release\Banco.pdb

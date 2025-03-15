@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\bin\Debug\TreinoCampoHarmonico.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\bin\Debug\TreinoCampoHarmonico.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\bin\Debug\TreinoCampoHarmonico.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\obj\Debug\TreinoCampoHarmonico.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\obj\Debug\TreinoCampoHarmonico.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\obj\Debug\TreinoCampoHarmonico.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\obj\Debug\TreinoCampoHarmonico.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\TreinoCampoHarmonico\obj\Debug\TreinoCampoHarmonico.pdb
