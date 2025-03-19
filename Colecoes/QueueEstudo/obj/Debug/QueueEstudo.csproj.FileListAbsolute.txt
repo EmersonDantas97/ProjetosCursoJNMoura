@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\bin\Debug\QueueEstudo.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\bin\Debug\QueueEstudo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\bin\Debug\QueueEstudo.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\obj\Debug\QueueEstudo.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\obj\Debug\QueueEstudo.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\obj\Debug\QueueEstudo.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\obj\Debug\QueueEstudo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\QueueEstudo\obj\Debug\QueueEstudo.pdb

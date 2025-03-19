@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\bin\Debug\ArrayList.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\bin\Debug\ArrayList.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\bin\Debug\ArrayList.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\obj\Debug\ArrayList.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\obj\Debug\ArrayList.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\obj\Debug\ArrayList.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\obj\Debug\ArrayList.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ArrayList\obj\Debug\ArrayList.pdb

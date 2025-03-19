@@ -6,6 +6,7 @@ namespace Nomes
     {
         static void Main(string[] args)
         {
+
             /*Faça um programa que receba 15 nomes do usuário e mostre eles na tela.*/
             
             Console.WriteLine("\n--------- NOMES\n");

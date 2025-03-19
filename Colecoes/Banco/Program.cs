@@ -32,6 +32,7 @@ namespace Banco
             const int CHAMARSENHA = 2;
             const int IMPRIMIRFILA = 3;
             const int ENCERRARPROGRAMA = 4;
+
             const int PRIMEIRASENHA = 1;
 
             int novaSenha = 0;                          // Armazena nova senha. Caso exceda o limite, é tomada decisões diferentes.
@@ -46,6 +47,7 @@ namespace Banco
 
             bool repetePerguntaOpcao = false;           // Variavel para evitar ter que fazer o mesmo teste logico 2x.
 
+            int ultimaSenhaAtiva = 0;
 
             while (true)
             {
@@ -61,11 +63,7 @@ namespace Banco
                 {
                     Console.Write("\nDigite o serviço desejado: ");
 
-                    repetePerguntaOpcao = uint.TryParse(Console.ReadLine(), out opcaoSelecionadaPeloCliente);
-
-                    repetePerguntaOpcao = !repetePerguntaOpcao || 
-                        opcaoSelecionadaPeloCliente < 1 || 
-                        opcaoSelecionadaPeloCliente > 4;
+                    repetePerguntaOpcao = !(uint.TryParse(Console.ReadLine(), out opcaoSelecionadaPeloCliente)) || opcaoSelecionadaPeloCliente < 1 || opcaoSelecionadaPeloCliente > 4;
                     
                     if (repetePerguntaOpcao)
                         Console.WriteLine("\n\tDigite um valor VÁLIDO!");
@@ -79,36 +77,28 @@ namespace Banco
 
                     case PEGARSENHA:
 
-
-                        if (qtdSenhasAtivas == 0)
-                        {
-                            senhasPendentesDeSeremAtendidas[0] = novaSenha = PRIMEIRASENHA;
-                        } 
-                        else if (qtdSenhasAtivas == QTDMAXIMASENHAS)
+                        if (qtdSenhasAtivas == QTDMAXIMASENHAS)
                         {
                             Console.Clear();
                             Console.WriteLine("\n--------- BANCO\n");
                             Console.WriteLine($"\tNão é possível gerar uma nova senha! TENTE NOVAMENTE MAIS TARDE!");
                             break;
+
                         }
                         else
                         {
+                            novaSenha++;
+
                             for (int i = 0; i < QTDMAXIMASENHAS; i++)
                             {
                                 if (senhasPendentesDeSeremAtendidas[i] == 0)
                                 {
-                                    novaSenha = senhasPendentesDeSeremAtendidas[i - 1] + 1;
-
-                                    if (novaSenha >= EXCEDEULIMITESENHAS)
-                                        senhasPendentesDeSeremAtendidas[i] = novaSenha = PRIMEIRASENHA;
-
                                     senhasPendentesDeSeremAtendidas[i] = novaSenha;
-
                                     break;
                                 }
                             }
-                        }
-
+                        };
+                        
                         qtdSenhasAtivas++;
 
                         Console.Clear();
@@ -131,7 +121,7 @@ namespace Banco
                             Console.Clear();
                             Console.WriteLine("\n--------- BANCO\n");
                             Console.WriteLine($"\tSENHA: {senhasPendentesDeSeremAtendidas[0]}\n\tCompareça ao guichê!");
-                            
+
                             senhasPendentesDeSeremAtendidas[0] = 0;
 
                             qtdSenhasAtivas--;
@@ -139,16 +129,11 @@ namespace Banco
                             // Reorganiza a fila
                             for (int i = 0; i < qtdSenhasAtivas; i++)
                             {
-                                senhasPendentesDeSeremAtendidas[i] = senhasPendentesDeSeremAtendidas[i + 1]; 
+                                senhasPendentesDeSeremAtendidas[i] = senhasPendentesDeSeremAtendidas[i + 1];
                             }
-
-                            // Apagando ultimo registro do array, para evitar duplicidades
-                            if (qtdSenhasAtivas == 4)
-                                senhasPendentesDeSeremAtendidas[QTDMAXIMASENHAS - 1] = 0;
-                            else
-                                senhasPendentesDeSeremAtendidas[qtdSenhasAtivas] = 0;
                         }
                         break;
+
 
                     case IMPRIMIRFILA:
 
@@ -167,7 +152,6 @@ namespace Banco
                         break;
 
                     case ENCERRARPROGRAMA:
-
                         // Caso não tenha sido retirado senha, sai do programa.
                         if (qtdSenhasAtivas == 0)
                         {
