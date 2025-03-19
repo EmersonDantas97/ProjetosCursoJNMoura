@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\bin\Debug\ParesEImpares.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\bin\Debug\ParesEImpares.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\bin\Debug\ParesEImpares.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\obj\Debug\ParesEImpares.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\obj\Debug\ParesEImpares.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\obj\Debug\ParesEImpares.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\obj\Debug\ParesEImpares.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\ParesEImpares\obj\Debug\ParesEImpares.pdb

@@ -26,6 +26,8 @@ namespace ArrayListEstudo
                 Console.WriteLine($"\tFoi inserido o valor: {item}");
             }
 
+            //listaDiversa.RemoveAt(0); // Comando utilizado para remover um item da lista.
+
             // Removendo um elemento da arraylist
             listaDiversa.Remove(10);
 

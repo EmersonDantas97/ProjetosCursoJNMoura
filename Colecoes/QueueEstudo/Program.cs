@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/*
+Enqueue = coloca o objeto como ultimo. 
+Dequeue = Tira o objeto inicial. 
+Peek = mostra o primeiro.
+ */
+
 namespace QueueEstudo
 {
     internal class Program

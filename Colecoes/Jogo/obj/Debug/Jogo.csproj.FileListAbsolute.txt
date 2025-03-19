@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\bin\Debug\Jogo.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\bin\Debug\Jogo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\bin\Debug\Jogo.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\obj\Debug\Jogo.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\obj\Debug\Jogo.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\obj\Debug\Jogo.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\obj\Debug\Jogo.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\Jogo\obj\Debug\Jogo.pdb

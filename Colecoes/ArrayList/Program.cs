@@ -43,6 +43,10 @@ namespace Array_List
             itens1.Add(1.20);
             itens1.Add(10.56);
 
+            // RemoveAt = remove pelo índice.
+            // Remove = remove pelo conteúdo.
+            //fila.Insert(1, senhaAtual++); // Vai adicionar no indice 1 
+
             //int x = itens1[0]; // Não aceita este código, pois está tentando inserir um objeto em uma variavel tipo int. Não faz a conversão implicita.
 
             int x = (int)itens1[0]; // Estou fazendo a conversão explicita.
