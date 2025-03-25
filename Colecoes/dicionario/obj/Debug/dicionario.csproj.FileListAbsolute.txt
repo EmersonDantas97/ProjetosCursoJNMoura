@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\bin\Debug\dicionario.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\bin\Debug\dicionario.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\bin\Debug\dicionario.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\obj\Debug\dicionario.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\obj\Debug\dicionario.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\obj\Debug\dicionario.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\obj\Debug\dicionario.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Colecoes\dicionario\obj\Debug\dicionario.pdb

@@ -3,22 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 
 /*
- * Jogo
- * 
- * Soco  - s => 2 pontos
- * Chute - c => 5 pontos 
- * Magia - m => 10 pontos
- * 
- * Deseja executar um golpe (s-soco c-chute m-magia x-sair)?
- * 
- * x => sair
- * 
- * Soco(s)  => 10 => 20 pontos
- * Chute(s) => 3 => 15 pontos
- * Magia(s) => 4 => 40 pontos
- * Total de pontos => 75 pontos
- * 
- * -- Pressione ENTER para encerrar --
+Jogo
+
+Soco  - s => 2 pontos
+Chute - c => 5 pontos 
+Magia - m => 10 pontos
+
+Deseja executar um golpe (s-soco c-chute m-magia x-sair)?
+
+x => sair
+
+Soco(s)  => 10 => 20 pontos
+Chute(s) => 3 => 15 pontos
+Magia(s) => 4 => 40 pontos
+Total de pontos => 75 pontos
+ 
+-- Pressione ENTER para encerrar --
  */
 
 namespace Jogo

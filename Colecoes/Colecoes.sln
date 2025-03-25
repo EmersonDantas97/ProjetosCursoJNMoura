@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj", "{07A7DA05-2F82-495C-8BB0-750724BFEDAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinoCampoHarmonico", "TreinoCampoHarmonico\TreinoCampoHarmonico.csproj", "{43880223-3562-463B-8C82-462DE78FD158}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeros", "Numeros\Numeros.csproj", "{56A8C20F-341F-4888-9FD1-8D45AB37F560}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nomes", "Nomes\Nomes.csproj", "{C3F482E8-BCC5-4D96-A5FE-E9EFB577C5A8}"
@@ -29,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogo", "Jogo\Jogo.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParesEImpares", "ParesEImpares\ParesEImpares.csproj", "{B36B0544-E515-42E7-BB0C-A657270D748F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicionario", "dicionario\Dicionario.csproj", "{79CD0CB6-B325-4AEE-88A0-DBE2C54941FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +39,6 @@ Global
 		{07A7DA05-2F82-495C-8BB0-750724BFEDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A7DA05-2F82-495C-8BB0-750724BFEDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A7DA05-2F82-495C-8BB0-750724BFEDAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43880223-3562-463B-8C82-462DE78FD158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43880223-3562-463B-8C82-462DE78FD158}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43880223-3562-463B-8C82-462DE78FD158}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43880223-3562-463B-8C82-462DE78FD158}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56A8C20F-341F-4888-9FD1-8D45AB37F560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56A8C20F-341F-4888-9FD1-8D45AB37F560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A8C20F-341F-4888-9FD1-8D45AB37F560}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{B36B0544-E515-42E7-BB0C-A657270D748F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B36B0544-E515-42E7-BB0C-A657270D748F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B36B0544-E515-42E7-BB0C-A657270D748F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CD0CB6-B325-4AEE-88A0-DBE2C54941FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD0CB6-B325-4AEE-88A0-DBE2C54941FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CD0CB6-B325-4AEE-88A0-DBE2C54941FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CD0CB6-B325-4AEE-88A0-DBE2C54941FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

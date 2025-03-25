@@ -8,7 +8,6 @@ namespace TreinoCampoHarmonico
         static void Main(string[] args)
         {
 
-
             bool repetePerguntaOpcao = false;
 
             uint opcaoSelecionadaNoMenu = 0;
@@ -19,7 +18,16 @@ namespace TreinoCampoHarmonico
 
             const int NUMEROACORDESCAMPOHARMONICO = 7;
 
-            List<string> CampoHarmonicoC = new List<string>() { "C", "Dm", "Em", "F", "G", "Am", "Bº" };
+            Dictionary<int, string> campoHarmonicoC = new Dictionary<int, string>() { [1,"C"] };
+
+            for (int i = 1; i <= NUMEROACORDESCAMPOHARMONICO; i++)
+            {
+                campoHarmonicoC.Add(i, "");
+
+            }
+
+
+            Dictionary<string> CampoHarmonicoC = new List<string>() { "C", "Dm", "Em", "F", "G", "Am", "Bº" };
             List<string> CampoHarmonicoD = new List<string>() { "D", "Em", "F#m", "G", "A", "Bm", "C#º" };
 
 

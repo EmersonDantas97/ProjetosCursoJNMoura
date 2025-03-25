@@ -33,6 +33,12 @@ namespace QueueEstudo
             // Contando elementos restantes
             Console.WriteLine($"\tA fila tem {fila.Count} elementos."); // Retorna 2
 
+            Console.WriteLine("\nOs elementos que sobraram na fila foram: \n");
+
+            // Percorrendo a Queue
+            foreach (string palavra in fila)
+                Console.WriteLine($"\t{palavra}");
+
             Console.Write("\nPressione ENTER retornar para finalizar o programa!");
             Console.ReadLine();
 
