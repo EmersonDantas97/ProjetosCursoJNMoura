@@ -6,47 +6,57 @@ namespace Carro01
     internal class Program
     {
         // tem que ser fora do main. Não é uma instrução e sim uma estrutura de dados.
-        //struct Carro
+        // struct Carro
         class Carro
         {
             public double cilindradas; // Quando não coloco o modificador de acesso, por padrão ele é privado.
-            public int numeroPortas;
+            public int numeroPortas; // São atributos e não propriedades.
             public string cor;
             public string nome;
             public int velocidade;
+            public double valor;
+
+            public void acelerar() // Void retorna com "ok". Tem gente que fala que não retorna nada é um equívoco.
+            {
+                velocidade++;
+                return;
+            }
         }
+        // Classe compõe a estrutura de um objeto. Classe não é objeto e objeto não é classe. O objeto é criado a partir da classe. Objeto é uma instância de memória.
+
 
         static void Main(string[] args)
         {
 
             #region "Solução 01"
-            //List<double> cilindradas = new List<double>();
-            //List<int> numeroPortas = new List<int>();
-            //List<string> cores = new List<string>();
-            //List<string> nomes = new List<string>();
-            //List<int> velocidades = new List<int>();
+            /*
+            List<double> cilindradas = new List<double>();
+            List<int> numeroPortas = new List<int>();
+            List<string> cores = new List<string>();
+            List<string> nomes = new List<string>();
+            List<int> velocidades = new List<int>();
 
-            //// Carro 01
-            //cilindradas.Add(1000);
-            //numeroPortas.Add(4);
-            //cores.Add("Branca");
-            //nomes.Add("Gol");
-            //velocidades.Add(0);
+            // Carro 01
+            cilindradas.Add(1000);
+            numeroPortas.Add(4);
+            cores.Add("Branca");
+            nomes.Add("Gol");
+            velocidades.Add(0);
 
-            //// Carro 02
-            //cilindradas.Add(1000);
-            //numeroPortas.Add(2);
-            //cores.Add("Prata");
-            //nomes.Add("Ka");
-            //velocidades.Add(60);
+            // Carro 02
+            cilindradas.Add(1000);
+            numeroPortas.Add(2);
+            cores.Add("Prata");
+            nomes.Add("Ka");
+            velocidades.Add(60);
 
-            //// Carro 03
-            //cilindradas.Add(2000);
-            //numeroPortas.Add(4);
-            //cores.Add("Preto");
-            //nomes.Add("Corolla");
-            //velocidades.Add(200);
-
+            // Carro 03
+            cilindradas.Add(2000);
+            numeroPortas.Add(4);
+            cores.Add("Preto");
+            nomes.Add("Corolla");
+            velocidades.Add(200);
+            */
             #endregion
 
             #region "Solução 02 - Criando objetos"
@@ -73,6 +83,13 @@ namespace Carro01
             carros[0].cilindradas = 8000;
 
             Console.WriteLine(carros[1].cilindradas);
+
+            carro01.velocidade = 0;
+            
+            carro01.acelerar();
+            carro01.acelerar();
+
+            carro02.acelerar();
 
             // Struct, quando colocado em uma lista ele copia os valores. Logo, se eu alterar o objeto carro01, não vai alterar o objeto 1 da lista de carros
             // Class, quando colocado em uma lista ele cria um apontamento. Logo, se eu alterar o objeto carro01, VAI alterar o objeto 1 da lista de carros
