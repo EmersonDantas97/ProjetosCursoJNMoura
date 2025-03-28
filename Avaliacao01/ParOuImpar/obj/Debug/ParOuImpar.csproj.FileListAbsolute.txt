@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\bin\Debug\ParOuImpar.exe.config
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\bin\Debug\ParOuImpar.exe
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\bin\Debug\ParOuImpar.pdb
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\obj\Debug\ParOuImpar.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\obj\Debug\ParOuImpar.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\obj\Debug\ParOuImpar.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\obj\Debug\ParOuImpar.exe
+D:\EMERSON\Curso JN Moura\Avaliacao01\ParOuImpar\obj\Debug\ParOuImpar.pdb

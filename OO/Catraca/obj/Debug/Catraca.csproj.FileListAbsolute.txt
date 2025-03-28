@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\bin\Debug\Catraca.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\bin\Debug\Catraca.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\bin\Debug\Catraca.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\obj\Debug\Catraca.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\obj\Debug\Catraca.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\obj\Debug\Catraca.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\obj\Debug\Catraca.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Catraca\obj\Debug\Catraca.pdb

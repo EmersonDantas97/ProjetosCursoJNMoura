@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carro01", "Carro01\Carro01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OO-Pessoa", "Pessoa\OO-Pessoa.csproj", "{5785643A-A8E1-40FA-9E9C-4F4998125FCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catraca", "Catraca\Catraca.csproj", "{45E8727D-7E7D-44B2-BBFE-C711F47ADDF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Porta", "Porta\Porta.csproj", "{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{5785643A-A8E1-40FA-9E9C-4F4998125FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5785643A-A8E1-40FA-9E9C-4F4998125FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5785643A-A8E1-40FA-9E9C-4F4998125FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E8727D-7E7D-44B2-BBFE-C711F47ADDF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E8727D-7E7D-44B2-BBFE-C711F47ADDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E8727D-7E7D-44B2-BBFE-C711F47ADDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E8727D-7E7D-44B2-BBFE-C711F47ADDF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

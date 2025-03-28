@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5785643A-A8E1-40FA-9E9C-4F4998125FCB}</ProjectGuid>
+    <ProjectGuid>{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pessoa</RootNamespace>
-    <AssemblyName>Pessoa</AssemblyName>
+    <RootNamespace>Porta</RootNamespace>
+    <AssemblyName>Porta</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pessoa.cs" />
+    <Compile Include="Porta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

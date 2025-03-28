@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\bin\Debug\Porta.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\bin\Debug\Porta.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\bin\Debug\Porta.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\obj\Debug\Porta.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\obj\Debug\Porta.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\obj\Debug\Porta.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\obj\Debug\Porta.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Porta\obj\Debug\Porta.pdb

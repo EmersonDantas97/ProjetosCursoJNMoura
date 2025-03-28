@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5785643A-A8E1-40FA-9E9C-4F4998125FCB}</ProjectGuid>
+    <ProjectGuid>{E4B9D595-95C0-43F4-B1EE-18A562EF18A3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pessoa</RootNamespace>
-    <AssemblyName>Pessoa</AssemblyName>
+    <RootNamespace>ParOuImpar</RootNamespace>
+    <AssemblyName>ParOuImpar</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

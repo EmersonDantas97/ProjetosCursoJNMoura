@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\bin\Debug\Pessoa.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\bin\Debug\Pessoa.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\bin\Debug\Pessoa.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\obj\Debug\OO-Pessoa.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\obj\Debug\OO-Pessoa.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\obj\Debug\OO-Pessoa.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\obj\Debug\Pessoa.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Pessoa\obj\Debug\Pessoa.pdb
