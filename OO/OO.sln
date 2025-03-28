@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catraca", "Catraca\Catraca.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Porta", "Porta\Porta.csproj", "{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pais", "Pais\Pais.csproj", "{8E6601AD-DAFC-4E65-984B-E9945B333E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumEstudo", "EnumEstudo\EnumEstudo.csproj", "{728AEAE1-0A42-4E35-84EE-11A78B930F19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83BCCB4E-BB96-4841-9B07-F19F22EB20CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6601AD-DAFC-4E65-984B-E9945B333E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6601AD-DAFC-4E65-984B-E9945B333E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6601AD-DAFC-4E65-984B-E9945B333E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6601AD-DAFC-4E65-984B-E9945B333E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728AEAE1-0A42-4E35-84EE-11A78B930F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728AEAE1-0A42-4E35-84EE-11A78B930F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728AEAE1-0A42-4E35-84EE-11A78B930F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728AEAE1-0A42-4E35-84EE-11A78B930F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
