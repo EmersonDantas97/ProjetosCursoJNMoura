@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace Porta
 {
+
+    public enum CorDaPorta
+    {
+        Nenhuma, Amarela, Verde, Vermelha
+    }
+
     internal class Porta
     {
         private bool aberta;
-        private string cor;
+        private CorDaPorta cor;
         private double dimensaoX;
         private double dimensaoY;
         private double dimensaoZ; 
@@ -24,24 +30,25 @@ namespace Porta
             this.aberta = false;
         }
 
-        private void pintar(string cor)
+        private void pintar(CorDaPorta cor)
         {
             this.cor = cor;
         }
         public void pintarAmarelo()
         {
-            pintar("Amarelo");
+            pintar(CorDaPorta.Amarela);
         }
 
-        public void pintarPreto()
+        public void pintarVermelha()
         {
-            pintar("Preto");
+            pintar(CorDaPorta.Vermelha);
         }
         public void pintarVerde()
         {
-            pintar("Verde");
+            pintar(CorDaPorta.Verde);
         }
 
+        #region Maneira alternativa de fazer - Maneira mais primitiva
         //public bool pintarPadrao(string cor)
         //{
         //    if (cor == "Amarelo" || cor == "Verde" || cor == "Preto")
@@ -51,13 +58,14 @@ namespace Porta
         //    }
         //        return false;
         //}
+        #endregion
 
         public bool estaAberta()
         {
             return aberta;
         }
 
-        public string getCor()
+        public CorDaPorta getCor()
         {
             return cor;
         }
@@ -65,13 +73,13 @@ namespace Porta
         public Porta()
         {
             this.aberta = false;
-            this.cor = "Branca";
+            this.cor = CorDaPorta.Nenhuma;
             this.dimensaoX = 0.00;
             this.dimensaoY = 0.00;
             this.dimensaoZ = 0.00;
         }
 
-        public Porta(bool aberta, string cor,double dimensaoX, double dimensaoY, double dimensaoZ)
+        public Porta(bool aberta, CorDaPorta cor, double dimensaoX, double dimensaoY, double dimensaoZ)
         {
             this.aberta = aberta;
             this.cor = cor;

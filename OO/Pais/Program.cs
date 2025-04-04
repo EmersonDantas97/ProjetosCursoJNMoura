@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+ 
 /*
     Um país tem como atributos o seu nome, o nome da sua capital, sua dimensão em
     Km2. Implemente (codifique) uma classe que represente um país conforme os itens abaixo:
@@ -20,8 +16,6 @@ using System.Threading.Tasks;
 1R: Os atributos do objeto nome, nomeCapital e dimensaoEmKm2 foram deixados encapsulados dentro da classe, para não ter acesso externo e só ser realizado o acesso/manipulação via prórpia classe.
 2R: Conceito de sobrecarga. Ocorre quando tenho mais que 1 construtor com assinaturas (nome + parâmetros) diferentes.
 3R: Sim. Foi utilizada, com o objetivo de se referir às caracteríticas da classe, para não ser misturado com os parâmetros do construtor, uma vez que ambos tem os mesmos nomes.
-
-
 */
 
 namespace Pais
@@ -30,37 +24,54 @@ namespace Pais
     {
         static void Main(string[] args)
         {
-            string nomePais;
-            string capitalPais;
-            double dimensaoEmKm2;
-            string paisesIguais;
+            //string nomePais;
+            //string capitalPais;
+            //double dimensaoEmKm2;
+            //string paisesIguais;
 
-            Console.WriteLine("\n--------- COMPARAÇÃO ENTRE PAISES");
+            Console.WriteLine("\n--------- COMPARAÇÃO ENTRE PAISES\n");
 
-            Console.WriteLine("\nPAIS 1");
-            Console.Write("\n\tInforme o nome do PAIS: ");
-            nomePais = Console.ReadLine();
-            Console.Write("\tInforme o nome da CAPITAL: ");
-            capitalPais = Console.ReadLine();
-            Console.Write("\tInforme a sua DIMENSÃO em Km2: ");
-            dimensaoEmKm2 = double.Parse(Console.ReadLine());
-            Pais pais01 = new Pais(nomePais, capitalPais, dimensaoEmKm2);
+            #region Exemplo 1
+            //Console.WriteLine("\nPAIS 1");
+            //Console.Write("\n\tInforme o nome do PAIS: ");
+            //nomePais = Console.ReadLine();
+            //Console.Write("\tInforme o nome da CAPITAL: ");
+            //capitalPais = Console.ReadLine();
+            //Console.Write("\tInforme a sua DIMENSÃO em Km2: ");
+            //dimensaoEmKm2 = double.Parse(Console.ReadLine());
+            //Pais pais01 = new Pais(nomePais, capitalPais, dimensaoEmKm2);
 
-            Console.WriteLine("\nPAIS 2");
-            Console.Write("\n\tInforme o nome do PAIS: ");
-            nomePais = Console.ReadLine();
-            Console.Write("\tInforme o nome da CAPITAL: ");
-            capitalPais = Console.ReadLine();
-            Console.Write("\tInforme a sua DIMENSÃO em Km2: ");
-            dimensaoEmKm2 = double.Parse(Console.ReadLine());
+            //Console.WriteLine("\nPAIS 2");
+            //Console.Write("\n\tInforme o nome do PAIS: ");
+            //nomePais = Console.ReadLine();
+            //Console.Write("\tInforme o nome da CAPITAL: ");
+            //capitalPais = Console.ReadLine();
+            //Console.Write("\tInforme a sua DIMENSÃO em Km2: ");
+            //dimensaoEmKm2 = double.Parse(Console.ReadLine());
 
-            Pais pais02 = new Pais(nomePais, capitalPais, dimensaoEmKm2);
+            //Pais pais02 = new Pais(nomePais, capitalPais, dimensaoEmKm2);
 
-            paisesIguais = pais01.Igual(pais02) ? "SIM" : "NÃO";
+            //paisesIguais = pais01.Igual(pais02) ? "SIM" : "NÃO";
 
-            Console.WriteLine("\n→ COMPARAÇÃO");
+            //Console.WriteLine("\n→ COMPARAÇÃO");
 
-            Console.WriteLine($"\n\tOs paises são iguais: {paisesIguais}");
+            //Console.WriteLine($"\n\tOs paises são iguais: {paisesIguais}");
+            #endregion
+
+            #region Exemplo 2
+            Pais p1 = new Pais();
+            p1.Nome = "Brasil";
+            p1.Capital = "Brasilia";
+            p1.DimensaoEmKm2 = 10.00;
+
+            Pais p2 = new Pais();
+            p2.Nome = "Argentina";
+            p2.Capital = "Buenos Aires";
+            p2.DimensaoEmKm2 = 12.00;
+            #endregion
+
+            Console.WriteLine($"Pais 1: {p1.Nome}");
+            Console.WriteLine($"Pais 2: {p2.Nome}");
 
             Console.Write("\nPressione ENTER para fechar o programa!");
             Console.Beep();

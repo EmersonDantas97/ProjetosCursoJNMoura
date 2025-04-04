@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+// Enum é uma constante encapsulada. 
 
 namespace EnumEstudo
 {
@@ -22,7 +20,6 @@ namespace EnumEstudo
 
             foreach (var item in Enum.GetValues(typeof(statusPedido))) // Acessando todos os nomes do enum
                 Console.Write($"{item} ");
-
 
             Filme filmeParaFamilia = new Filme();
             filmeParaFamilia.Nome = "Sharknado";

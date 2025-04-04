@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\bin\Debug\LavaJato02.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\bin\Debug\LavaJato02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\bin\Debug\LavaJato02.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\obj\Debug\LavaJato02.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\obj\Debug\LavaJato02.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\obj\Debug\LavaJato02.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\obj\Debug\LavaJato02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\LavaJato02\obj\Debug\LavaJato02.pdb

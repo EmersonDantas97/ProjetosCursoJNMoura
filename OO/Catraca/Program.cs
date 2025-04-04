@@ -10,6 +10,8 @@ namespace Catraca
     {
         static void Main(string[] args)
         {
+            Carro
+
             uint opcaoSelecionadaPeloCliente = 0;
 
             bool repetePergunta = false;

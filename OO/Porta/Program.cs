@@ -9,10 +9,10 @@ namespace Porta
             Console.WriteLine("\n--------- CATRACA");
 
             Porta porta01 = new Porta();
-            Porta porta02 = new Porta(true, "Azul", 1.00, 2.00, 0.05);
+            Porta porta02 = new Porta(true, CorDaPorta.Nenhuma, 1.00, 2.00, 0.05);
 
             porta01.pintarAmarelo();
-            porta02.pintarPreto();
+            porta01.pintarVerde();
 
             string portaAberta1 = porta01.estaAberta() ? "Sim" : "Não";
             string portaAberta2 = porta02.estaAberta() ? "Sim" : "Não";

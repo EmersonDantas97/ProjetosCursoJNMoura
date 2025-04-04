@@ -18,31 +18,79 @@ using System.Threading.Tasks;
     Você utilizou o a palavra reservada “this” na classe que representa o país? Por que? 
 */
 
+// Readonly => Permitir a alteração de um atributo somente leitura no método construtor. 
+
 namespace Pais
 {
     internal class Pais
     {
-        private string nome;
-        private string nomeCapital;
-        private double dimensaoEmKm2;
-
+        // Propriedade pode encapsular no máximo 2 métodos.
+        public string Nome { get; set; }
+        public string Capital { get; set; }
+        public double DimensaoEmKm2 { get; set; }
+        
         public Pais()
         {
         }
 
         public Pais(string nome, string nomeCapital, double dimensaoEmKm2)
         {
-            this.nome = nome;
-            this.nomeCapital = nomeCapital;
-            this.dimensaoEmKm2 = dimensaoEmKm2;
+            Nome = nome;
+            Capital = nomeCapital;
+            DimensaoEmKm2 = dimensaoEmKm2;
         }
 
         public bool Igual(Pais pais)
         {
-            if (pais.nome == this.nome && pais.nomeCapital == this.nomeCapital)
-                return true;
-
-            return false;
+                return pais.Nome == this.Nome && pais.Capital == this.Capital; // Está encapsulado as comparações de igualdade.
         }
+
+
+
+        //public string Nome
+        //{
+        //    set
+        //    {
+        //        this.nome = value;
+        //    }
+        //    get
+        //    {
+        //        return this.nome;
+        //    }
+        //}
+
+        //public string NomeCapital
+        //{
+        //    set
+        //    {
+        //        this.nomeCapital = value;
+        //    }
+        //    get
+        //    {
+        //        return this.nomeCapital;
+        //    }
+        //}
+
+        //public double DimensaoEmKm2
+        //{
+        //    set
+        //    {
+        //        this.dimensaoEmKm2 = value;
+        //    }
+        //    get
+        //    {
+        //        return this.dimensaoEmKm2;
+        //    }
+        //}
+
+        // Método Equals compara endereços.
+
+        // Comparando o endereco.
+        /*
+        public bool Igual(Pais pais)
+        {
+            return this == pais;
+        }
+        */
     }
 }
