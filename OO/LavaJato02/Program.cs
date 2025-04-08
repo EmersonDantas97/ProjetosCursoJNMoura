@@ -42,6 +42,13 @@ namespace LavaJato02
 {
     internal class Program
     {
+        enum opcoesDoSistema
+        {
+            adicionarCarroNaFilaDeLavagem = 1,
+            lavarCarro = 2,
+            retirarCarro = 3,
+            fecharPrograma = 4
+        }
 
         public static void instrucoesParaRetornarAoMenu()
         {
@@ -52,12 +59,18 @@ namespace LavaJato02
             return;
         }
 
-        enum opcoesDoSistema
+        static Carro ObterDadosCarro(int ID)
         {
-            adicionarCarroNaFilaDeLavagem = 1,
-            lavarCarro = 2,
-            retirarCarro = 3,
-            fecharPrograma = 4
+            Carro novoCarroNaFila = new Carro();
+            novoCarroNaFila.Id = ID;
+
+            Console.Write("\n\tDigite o MODELO do carro: ");
+            novoCarroNaFila.Nome = Console.ReadLine();
+
+            Console.Write("\tDigite o ANO do carro: ");
+            novoCarroNaFila.Ano = int.Parse(Console.ReadLine());
+
+            return novoCarroNaFila;
         }
 
         static void Main(string[] args)
@@ -69,12 +82,10 @@ namespace LavaJato02
 
             int novaSenha = 0;
 
-            Queue<Carro> carroASeremLavados = new Queue<Carro>();
-            List<Carro> carroNoPatio = new List<Carro>();
+            LavaCar lavaJato = new LavaCar();
 
             while (true)
             {
-
                 Console.WriteLine($"\n--------- LAVAJATO\n");
                 Console.WriteLine($"Verifique as opções abaixo e selecione o serviço, pressionando o seu número de correspondência: \n");
                 Console.WriteLine($"\t[{(int)opcoesDoSistema.adicionarCarroNaFilaDeLavagem}] - Adicionar carro na fila de lavagem");
@@ -98,40 +109,29 @@ namespace LavaJato02
                 {
                     case (int)opcoesDoSistema.adicionarCarroNaFilaDeLavagem:
 
-                        Carro novoCarroNaFila = new Carro();
-                        novoCarroNaFila.Id = ++novaSenha;
+                        lavaJato.AdicionarCarroParaLavar(ObterDadosCarro(++novaSenha));
 
-                        Console.Write("\n\tDigite o MODELO do carro: ");
-                        novoCarroNaFila.Nome = Console.ReadLine();
-
-                        Console.Write("\tDigite o ANO do carro: ");
-                        novoCarroNaFila.Ano = int.Parse(Console.ReadLine());
-
-                        carroASeremLavados.Enqueue(novoCarroNaFila);
-
-                        Console.WriteLine($"\n\tCarro <{novoCarroNaFila.Nome}> foi adicionado a fila e será limpo em breve! Sua senha é <{novaSenha}>");
+                        Console.WriteLine($"\n\tCarro foi adicionado a fila e será limpo em breve! Sua senha é <{novaSenha}>");
 
                         break;
 
                     case (int)opcoesDoSistema.lavarCarro:
 
-                        if (carroASeremLavados.Count == 0)
+                        if (!lavaJato.TemCarroParaLavar())
                         { 
                             Console.WriteLine("\n\tNão tem carros na fila para lavagem!");
                             break;
                         }
 
-                        Carro carroSendoLavado = carroASeremLavados.Dequeue();
+                        lavaJato.LavarCarro();
 
-                        carroNoPatio.Add(carroSendoLavado);
-
-                        Console.WriteLine($"\n\tCarro <{carroSendoLavado.Nome}> sendo lavado e encaminhado ao pátio!");
+                        Console.WriteLine($"\n\tCarro <{lavaJato.LavarCarro().Nome}> sendo lavado e encaminhado ao pátio!");
 
                         break;
 
                     case (int)opcoesDoSistema.retirarCarro:
 
-                        if (carroNoPatio.Count == 0)
+                        if (!lavaJato.TemCarroNoPatio())
                         {
                             Console.WriteLine("\n\tNão tem carros no pátio!");
                             break;
@@ -148,13 +148,12 @@ namespace LavaJato02
                             Console.Write("\n\tDigite o ID do carro a ser chamado: ");
                             idDigitadoEInvalido = !uint.TryParse(Console.ReadLine(), out idDoCarroASerChamado);
 
-                            foreach (Carro carro in carroNoPatio)
+                            foreach (Carro carro in lavaJato.ListaDeCarrosNoPatio())
                             {
                                 if (idDoCarroASerChamado == carro.Id)
                                 {
-                                    carroNoPatio.Remove(carro);
+                                    carroNaoEncontrado = lavaJato.RemoveCarro(idDoCarroASerChamado);
                                     Console.WriteLine($"\n\tCarro <{carro.Nome}> entregue ao cliente! ");
-                                    carroNaoEncontrado = false;
                                     break;
                                 }
                             }
@@ -170,7 +169,7 @@ namespace LavaJato02
 
                     case (int)opcoesDoSistema.fecharPrograma:
 
-                        if (carroASeremLavados.Count == 0 && carroNoPatio.Count == 0)
+                        if (!lavaJato.TemCarroNoLavaCar())
                         {
                             Console.Write("\n\tSistema sendo encerrado! \n\nPressione ENTER para fechar a tela...");
                             Console.ReadLine();
@@ -178,9 +177,7 @@ namespace LavaJato02
                         }
                         Console.WriteLine("\n\tNão é possível encerrar o sistema! Existem carros a serem entregues...");
                         break;
-
                 }
-
                 instrucoesParaRetornarAoMenu();
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LavaJato02
 {
-    internal class Carro
+    public class Carro
     {
         public int Id { get; set; }
         public string Nome { get; set; }

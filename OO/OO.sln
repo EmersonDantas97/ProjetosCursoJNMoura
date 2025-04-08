@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lavajato", "Lavajato\Lavaja
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LavaJato02", "LavaJato02\LavaJato02.csproj", "{9F2C645C-8636-43D1-91F7-10FFEDC16BA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaEletrodomesticos", "LojaEletrodomesticos\LojaEletrodomesticos.csproj", "{EC119327-9147-4B48-9519-1417A2CED7FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{9F2C645C-8636-43D1-91F7-10FFEDC16BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F2C645C-8636-43D1-91F7-10FFEDC16BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F2C645C-8636-43D1-91F7-10FFEDC16BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC119327-9147-4B48-9519-1417A2CED7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC119327-9147-4B48-9519-1417A2CED7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC119327-9147-4B48-9519-1417A2CED7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC119327-9147-4B48-9519-1417A2CED7FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
