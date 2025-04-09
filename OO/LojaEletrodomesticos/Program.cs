@@ -74,10 +74,49 @@ namespace LojaEletrodomesticos
                         break;
 
                     case OpcoesSistema.Consertar:
+
+                        if (!loja.TemEletrodomesticoParaConserto())
+                        {
+                            Console.WriteLine("\n\t>> Não tem eletrodomesticos para consertar!");
+                            break;
+                        }
+
+                        Console.WriteLine($"\n\t>> Eletrodomestico <{loja.ConsertarEletrodomestico().Nome}> pronto para ser retirado!");
+
                         break;
+
                     case OpcoesSistema.Receber:
+
+
+
+                        bool eletrodomesticoEncontrado = false;
+
+                        do
+                        {
+                            Console.Write("\n\tDigite o nome do eletrodoméstico que deseja retirar: ");
+                            eletrodomesticoEncontrado = loja.RetirarEletrodomestico(Console.ReadLine());
+
+                            if (!eletrodomesticoEncontrado)
+                                Console.WriteLine("\n\tEletrodomestico não encontrado! Confirme as informações e tente novamente...");
+
+                        } while (!eletrodomesticoEncontrado);
+
+                        Console.WriteLine("\n\t>> Eletrodomestico retirado com sucesso!");
                         break;
+
                     case OpcoesSistema.Sair:
+                        if (loja.TemEletrodomesticosProntosParaRetirada())
+                        {
+                            Console.WriteLine("\n\t>> Impossível fechar o sistema, pois tem ainda eletrodomesticos pendentes de retirada!");
+                        }
+                        else
+                        {
+                            Console.Write("\nSistema sendo fechado! Pressione ENTER para fechar a tela...");
+                            Console.ReadLine();
+                            return;
+                        }
+
+
                         break;
                 }
 

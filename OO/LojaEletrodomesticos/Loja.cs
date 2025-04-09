@@ -8,16 +8,47 @@ namespace LojaEletrodomesticos
 {
     internal class Loja
     {
-        private List<Eletrodomestico> listaParaConserto = new List<Eletrodomestico>();
+        private Queue<Eletrodomestico> listaParaConserto = new Queue<Eletrodomestico>();
+        private List<Eletrodomestico> listaEletrosConsertados = new List<Eletrodomestico>();
 
         public void EntregueParaConsertar(Eletrodomestico eletrodomestico)
         {
-            listaParaConserto.Add(eletrodomestico);
+            listaParaConserto.Enqueue(eletrodomestico);
         }
         
-        public void ConsertarEletrodomestico(int id)
+        public Eletrodomestico ConsertarEletrodomestico()
         {
+            Eletrodomestico eletrodomesticoConsertado = listaParaConserto.Dequeue();
 
+            listaEletrosConsertados.Add(eletrodomesticoConsertado);
+
+            return eletrodomesticoConsertado;
+        }
+
+        public bool TemEletrodomesticosProntosParaRetirada()
+        {
+            return listaEletrosConsertados.Count > 0 ? true : false;
+        }
+
+        public bool TemEletrodomesticoParaConserto()
+        {
+            return listaParaConserto.Count > 0 ? true : false;
+        }
+
+        public bool RetirarEletrodomestico(string nomeEletrodomestico)
+        {
+            bool itemRemovido = false;
+
+            foreach (var item in listaEletrosConsertados)
+            {
+                if (item.Nome == nomeEletrodomestico)
+                {
+                    listaEletrosConsertados.Remove(item);
+                    itemRemovido = true;
+                    break;
+                }
+            }
+            return itemRemovido;
         }
 
     }
