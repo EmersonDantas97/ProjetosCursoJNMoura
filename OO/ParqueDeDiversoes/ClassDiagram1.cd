@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ParqueDeDiversoes.Bilheteria" Collapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bilheteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Brinquedo" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Brinquedo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Carrossel" Collapsed="true">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Carrossel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Eletrico" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Eletrico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Mecanico" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mecanico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.MontanhaRussa" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MontanhaRussa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Parque" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAAAAAAAAAAEAAAIAAQAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Parque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Pescaria" Collapsed="true">
+    <Position X="13" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pescaria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.Pessoa" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Pessoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.RodaGigante" Collapsed="true">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RodaGigante.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.TiroAoAlvo" Collapsed="true">
+    <Position X="11.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TiroAoAlvo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParqueDeDiversoes.TrombaTromba" Collapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TrombaTromba.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

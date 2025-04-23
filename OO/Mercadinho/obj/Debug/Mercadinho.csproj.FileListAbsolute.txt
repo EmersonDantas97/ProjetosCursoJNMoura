@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\bin\Debug\Mercadinho.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\bin\Debug\Mercadinho.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\bin\Debug\Mercadinho.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\obj\Debug\Mercadinho.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\obj\Debug\Mercadinho.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\obj\Debug\Mercadinho.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\obj\Debug\Mercadinho.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Mercadinho\obj\Debug\Mercadinho.pdb

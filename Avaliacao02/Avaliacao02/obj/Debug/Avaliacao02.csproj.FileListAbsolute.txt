@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\bin\Debug\Avaliacao02.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\bin\Debug\Avaliacao02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\bin\Debug\Avaliacao02.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\obj\Debug\Avaliacao02.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\obj\Debug\Avaliacao02.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\obj\Debug\Avaliacao02.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\obj\Debug\Avaliacao02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao02\Avaliacao02\obj\Debug\Avaliacao02.pdb

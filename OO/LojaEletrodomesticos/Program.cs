@@ -27,7 +27,6 @@ namespace LojaEletrodomesticos
             Sair = 4,
             Nenhuma = 0
         }
-
         public static Eletrodomestico ColetaDadosEletrodomestico()
         {
             Eletrodomestico novoEletroDomesticoParaConserto = new Eletrodomestico();
@@ -37,7 +36,6 @@ namespace LojaEletrodomesticos
 
             return novoEletroDomesticoParaConserto;
         }
-
         static void Main(string[] args)
         {
 
@@ -87,8 +85,6 @@ namespace LojaEletrodomesticos
 
                     case OpcoesSistema.Receber:
 
-
-
                         bool eletrodomesticoEncontrado = false;
 
                         do
@@ -115,8 +111,6 @@ namespace LojaEletrodomesticos
                             Console.ReadLine();
                             return;
                         }
-
-
                         break;
                 }
 

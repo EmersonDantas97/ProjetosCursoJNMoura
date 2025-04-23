@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\bin\Debug\Carro02.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\bin\Debug\Carro02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\bin\Debug\Carro02.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\obj\Debug\Carro02.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\obj\Debug\Carro02.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\obj\Debug\Carro02.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\obj\Debug\Carro02.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Carro02\obj\Debug\Carro02.pdb

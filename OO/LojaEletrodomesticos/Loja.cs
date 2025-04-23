@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LojaEletrodomesticos
 {
@@ -19,6 +16,8 @@ namespace LojaEletrodomesticos
         public Eletrodomestico ConsertarEletrodomestico()
         {
             Eletrodomestico eletrodomesticoConsertado = listaParaConserto.Dequeue();
+
+            eletrodomesticoConsertado.Defeito = false;
 
             listaEletrosConsertados.Add(eletrodomesticoConsertado);
 
@@ -50,7 +49,5 @@ namespace LojaEletrodomesticos
             }
             return itemRemovido;
         }
-
     }
-
 }

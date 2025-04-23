@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\bin\Debug\ParqueDeDiversoes03.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\bin\Debug\ParqueDeDiversoes03.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\bin\Debug\ParqueDeDiversoes03.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\obj\Debug\ParqueDeDiversoes03.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\obj\Debug\ParqueDeDiversoes03.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\obj\Debug\ParqueDeDiversoes03.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\obj\Debug\ParqueDeDiversoes03.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\ParqueDeDiversoes03\obj\Debug\ParqueDeDiversoes03.pdb

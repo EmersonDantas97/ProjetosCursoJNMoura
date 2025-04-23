@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\bin\Debug\Animal.exe.config
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\bin\Debug\Animal.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\bin\Debug\Animal.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\obj\Debug\Animal.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\obj\Debug\Animal.csproj.SuggestedBindingRedirects.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\obj\Debug\Animal.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\obj\Debug\Animal.exe
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\OO\Animal\obj\Debug\Animal.pdb
