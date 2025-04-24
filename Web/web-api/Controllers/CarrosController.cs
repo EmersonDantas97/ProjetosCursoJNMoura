@@ -17,6 +17,17 @@ namespace web_api.Controllers
             return listaCarros;
         }
 
+        // POST: api/Carros/Lote
+        [HttpPost]
+        [Route("api/Carros/Lote")]
+        public void PostLote([FromBody] List<Models.Carro> carros)
+        {
+            foreach (var carro in carros)
+            {
+                listaCarros.Add(carro);
+            }
+        }
+
         // GET: api/Carros/5
         public Models.Carro Get(int id)
         {
@@ -36,16 +47,6 @@ namespace web_api.Controllers
             listaCarros.Add(carro);
         }
 
-        // POST: api/Carros
-        public void Post([FromBody] Models.Carro[] carros)
-        {
-
-            foreach (var item in carros)
-            {
-                listaCarros.Add(item);
-            }
-        }
-
         // PUT: api/Carros/5
         public void Put(int id, [FromBody] Models.Carro carro)
         {
@@ -53,7 +54,8 @@ namespace web_api.Controllers
             {
                 if (item.Id == carro.Id)
                 {
-                    listaCarros.Remove(item);
+                    item.Nome = carro.Nome;
+                    item.Valor = carro.Valor;
                 }
             }
         }
@@ -66,6 +68,7 @@ namespace web_api.Controllers
                 if (item.Id == id)
                 {
                     listaCarros.Remove(item);
+                    break;
                 }
             }
         }
