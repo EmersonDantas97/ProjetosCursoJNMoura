@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\brinquedoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\web\\web-api\\models\\brinquedo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\models\\brinquedo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\models\\brinquedo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "web-api\\Controllers\\BrinquedosController.cs",
               "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\BrinquedosController.cs",
               "RelativeToolTip": "web-api\\Controllers\\BrinquedosController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T13:19:37.619Z",
               "EditorCaption": ""
@@ -43,8 +43,7 @@
               "RelativeToolTip": "web-api\\Models\\Brinquedo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T13:16:06.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T13:16:06.16Z"
             }
           ]
         }
