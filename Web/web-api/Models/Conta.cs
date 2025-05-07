@@ -4,7 +4,7 @@ namespace web_api.Models
 {
     public enum Parcelada
     {
-        Sim, Nao
+        Sim = 0, Nao = 1
     }
     public class Conta
     {

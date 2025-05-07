@@ -1,20 +1,58 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Data.SqlClient;
+using web_api.Models;
+using System;
 
 namespace web_api.Controllers
 {
     public class CarrosController : ApiController
     {
-        private static List<Models.Carro> listaCarros = new List<Models.Carro>();
+        private readonly string connectionString;
 
         public CarrosController()
         {
+            this.connectionString = "Server=DESKTOP-7TLUK34;Database=web-api;Trusted_Connection=True;";
         }
 
         // GET: api/Carros
-        public List<Models.Carro> Get()
+        public IHttpActionResult Get()
         {
-            return listaCarros;
+            List<Models.Carro> listaCarros = new List<Models.Carro>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "Select Id, Nome, Valor from Carro;";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Carro carro = new Carro();
+
+                        carro.Id = (int) dr["Id"];
+                        carro.Nome = (string) dr["Nome"];
+                        carro.Valor = Convert.ToDouble(dr["Valor"]);
+
+                        listaCarros.Add(carro);
+                    }
+                }
+            }
+                //conn.Close();
+                //conn.Dispose(); // Marca para garbdge colector excluir da memória. 
+
+            /*
+                Reader = Pega dados. 2 colunas x 2 linhas = 4 dados.
+                NonQuery = Insert, Update e Delete.
+                Scalar = Retorna somente 1 dado.
+             */
+
+            return Ok(listaCarros);
         }
 
         // POST: api/Carros/Lote
@@ -22,55 +60,113 @@ namespace web_api.Controllers
         [Route("api/Carros/Lote")]
         public void PostLote([FromBody] List<Models.Carro> carros)
         {
-            foreach (var carro in carros)
-            {
-                listaCarros.Add(carro);
-            }
+            //foreach (var carro in carros)
+            //{
+            //    listaCarros.Add(carro);
+            //}
         }
 
         // GET: api/Carros/5
-        public Models.Carro Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            foreach (var item in listaCarros)
+            Carro carro = new Carro();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                if (item.Id == id)
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    return item;
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"Select Id, Nome, Valor from Carro where Id = {id};";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        carro.Id = (int) dr["Id"];
+                        carro.Nome = (string) dr["Nome"];
+                        carro.Valor = Convert.ToDouble(dr["Valor"]);
+                    }
                 }
+
+                if (carro.Id != null)
+                    return Ok(carro);
+                else
+                    return BadRequest("Dados não encontrados para o ID informado!");
             }
-            return null;
         }
 
         // POST: api/Carros
         public void Post([FromBody] Models.Carro carro)
         {
-            listaCarros.Add(carro);
+            bool insertRealizado = false;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor})";
+
+                    // Se inserir uma linha
+                    insertRealizado = cmd.ExecuteNonQuery() > 0 ? true : false ;
+                }
+            }
+
+            if (insertRealizado)
+                Ok();
+            else
+                BadRequest();
         }
 
         // PUT: api/Carros/5
         public void Put(int id, [FromBody] Models.Carro carro)
         {
-            foreach (var item in listaCarros)
+            bool updateRealizado = false;
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                if (item.Id == carro.Id)
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    item.Nome = carro.Nome;
-                    item.Valor = carro.Valor;
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"Update Carro Set Nome = '{carro.Nome}', Valor = {carro.Valor} where Id = {id};";
+
+                    // Se inserir uma linha
+                    updateRealizado = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
             }
+
+            if (updateRealizado)
+                Ok();
+            else
+                BadRequest();
         }
 
         // DELETE: api/Carros/5
         public void Delete(int id)
         {
-            foreach (var item in listaCarros)
+            bool deleteRealizado = false;
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                if (item.Id == id)
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    listaCarros.Remove(item);
-                    break;
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"Delete From Carro where Id = {id};";
+
+                    // Se inserir uma linha
+                    deleteRealizado = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
             }
+
+            if (deleteRealizado)
+                Ok();
+            else
+                BadRequest();
         }
     }
 }

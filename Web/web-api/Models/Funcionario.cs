@@ -7,12 +7,12 @@ namespace web_api.Models
 {
     public class Funcionario
     {
-        public int Codigo { get; set; }
+        public int? Codigo { get; set; } // nullable type
         public int CodigoDepartamento { get; set; }
         public string PrimeiroNome { get; set; }
         public string SegundoNome { get; set; }
         public string UltimoNome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string Endereco { get; set; }
@@ -28,3 +28,23 @@ namespace web_api.Models
 
     }
 }
+
+
+/*
+ {
+  "Codigo": 0,
+  "CodigoDepartamento": 0,
+  "PrimeiroNome": null,
+  "SegundoNome": null,
+  "UltimoNome": null,
+  "DataNascimento": "0001-01-01T00:00:00",
+  "CPF": null,
+  "RG": null,
+  "Endereco": null,
+  "CEP": null,
+  "Cidade": null,
+  "Fone": null,
+  "Funcao": null,
+  "Salario": 0.0
+}
+ */

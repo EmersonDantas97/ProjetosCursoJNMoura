@@ -17,93 +17,130 @@ namespace web_api.Controllers
             {
                 return Ok(listaDeFuncionarios);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return InternalServerError(ex);
+                // Logar Ex
+                return InternalServerError();
             }
         }
 
         // GET: api/Funcionarios/5
         public IHttpActionResult Get(int id)
         {
-            foreach (var item in listaDeFuncionarios)
+            try
             {
-                if (item.Codigo == id)
+                foreach (var item in listaDeFuncionarios)
                 {
-                    return Ok(item);
+                    if (item.Codigo == id)
+                        return Ok(item);
                 }
+                return NotFound();
             }
-
-            return NotFound();
+            catch (Exception)
+            {
+                // Logar Ex
+                return InternalServerError();
+            }
         }
 
         // POST: api/Funcionarios
         public IHttpActionResult Post([FromBody] Funcionario funcionario)
         {
-            if (funcionario == null)
+            try
             {
-                return BadRequest("Dados não foram enviados!");
-            }
+                if (funcionario == null)
+                    return BadRequest("Dados não foram enviados!");
 
-            listaDeFuncionarios.Add(funcionario);
-            return Ok();
+                listaDeFuncionarios.Add(funcionario);
+                return Ok();
+
+            }
+            catch (Exception)
+            {
+                // Logar Ex
+                return InternalServerError();
+            }
         }
 
         [Route("api/Funcionarios/batch")]
         // POST: api/Funcionarios
         public IHttpActionResult Post([FromBody] List<Funcionario> listaFuncionarios)
         {
-            if (listaFuncionarios == null)
+            try
             {
-                return BadRequest("Dados não foram enviados!");
-            }
+                if (listaFuncionarios == null)
+                    return BadRequest("Dados não foram enviados!");
 
-            foreach (var item in listaFuncionarios)
+                foreach (var item in listaFuncionarios)
+                    listaDeFuncionarios.Add(item);
+
+                return Ok();
+
+            }
+            catch (Exception)
             {
-                listaDeFuncionarios.Add(item);
+                // Logar Ex
+                return InternalServerError();
             }
-
-            return Ok();
         }
 
         // PUT: api/Funcionarios/5
         public IHttpActionResult Put(int id, [FromBody] Funcionario funcionario)
         {
-            foreach (var item in listaDeFuncionarios)
+            try
             {
-                item.CEP = funcionario.CEP;
-                item.RG = funcionario.RG;
-                item.Salario = funcionario.Salario;
-                item.Cidade = funcionario.Cidade;
-                item.CodigoDepartamento = funcionario.CodigoDepartamento;
-                item.CPF = funcionario.CPF;
-                item.DataNascimento = funcionario.DataNascimento;
-                item.Endereco = funcionario.Endereco;
-                item.SegundoNome = funcionario.SegundoNome;
-                item.UltimoNome = funcionario.UltimoNome;
-                item.PrimeiroNome = funcionario.PrimeiroNome;
-                item.Fone = funcionario.Fone;
-                item.Funcao = funcionario.Funcao;
+                foreach (var item in listaDeFuncionarios)
+                {
+                    item.CEP = funcionario.CEP;
+                    item.RG = funcionario.RG;
+                    item.Salario = funcionario.Salario;
+                    item.Cidade = funcionario.Cidade;
+                    item.CodigoDepartamento = funcionario.CodigoDepartamento;
+                    item.CPF = funcionario.CPF;
+                    item.DataNascimento = funcionario.DataNascimento;
+                    item.Endereco = funcionario.Endereco;
+                    item.SegundoNome = funcionario.SegundoNome;
+                    item.UltimoNome = funcionario.UltimoNome;
+                    item.PrimeiroNome = funcionario.PrimeiroNome;
+                    item.Fone = funcionario.Fone;
+                    item.Funcao = funcionario.Funcao;
 
-                return Ok(item);
+                    // Automapper. Utiliza recurso da máquina, pode utilizar, mas tome cuidado.
+
+                    return Ok(item); // Tenho que retornar o item, para saber como ficou no bd.
+                }
+
+                return NotFound();
+
             }
-
-            return NotFound();
+            catch (Exception)
+            {
+                // Logar Ex
+                return InternalServerError();
+            }
         }
 
         // DELETE: api/Funcionarios/5
         public IHttpActionResult Delete(int id)
         {
-            foreach (var item in listaDeFuncionarios)
+            try
             {
-                if (item.Codigo == id)
+                foreach (var item in listaDeFuncionarios)
                 {
-                    listaDeFuncionarios.Remove(item);
-                    return Ok();
+                    if (item.Codigo == id)
+                    {
+                        listaDeFuncionarios.Remove(item);
+                        return Ok();
+                    }
                 }
-            }
 
-            return NotFound();
+                return NotFound();
+            }
+            catch (Exception)
+            {
+                // Logar Ex
+                return InternalServerError();
+            }
         }
     }
 }
