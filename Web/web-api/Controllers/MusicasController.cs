@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using web_api.Models;
 using web_api.Repository;
 
@@ -41,7 +42,17 @@ namespace web_api.Controllers
             else
                 return BadRequest("Não foi possível realizar a inserção! Verifique as informações e tente novamente...");
         }
-        
+        // POST: api/Musicas/Lote
+        [Route("api/Musicas/Lote")]
+        public IHttpActionResult Post([FromBody] List<Musica> musicas)
+        {
+            List<Musica> musicasAdicionadas = repositorio.AdicionarEmLote(musicas);
+
+            if (musicasAdicionadas.Count != 0)
+                return Ok(musicasAdicionadas);
+            else
+                return BadRequest("Não foi possível realizar a inserção! Verifique as informações e tente novamente...");
+        }
         // PUT: api/Musicas/5
         public IHttpActionResult Put(int id, [FromBody] Musica musica)
         {

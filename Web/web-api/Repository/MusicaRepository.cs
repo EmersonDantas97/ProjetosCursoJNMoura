@@ -149,6 +149,45 @@ namespace web_api.Repository
 
             return ObterPorId(IdGerado);
         }
+        public List<Musica> AdicionarEmLote(List<Musica> musicas)
+        {
+            List<Musica> musicasInseridas = new List<Musica>();
+
+            if (musicas.Count > 0)
+                return musicasInseridas;
+
+            using
+            (SqlConnection conn = new SqlConnection(_conexao))
+            {
+                conn.Open();
+
+                foreach (var musica in musicas)
+                {
+                    string comando =
+                        "INSERT INTO Musica (Nome, Versao, DataCadastro, Observacao, Tom, TomOriginal) " +
+                        "VALUES (@Nome, @Versao, @DataCadastro, @Observacao, @Tom, @TomOriginal); " +
+                        "SELECT SCOPE_IDENTITY();";
+
+                    using
+                    (SqlCommand cmd = new SqlCommand(comando, conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Nome", musica.Nome);
+                        cmd.Parameters.AddWithValue("@Versao", musica.Versao);
+                        cmd.Parameters.AddWithValue("@DataCadastro", musica.DataCadastro);
+                        cmd.Parameters.AddWithValue("@Observacao", musica.Observacao);
+                        cmd.Parameters.AddWithValue("@Tom", musica.Tom);
+                        cmd.Parameters.AddWithValue("@TomOriginal", musica.TomOriginal);
+
+                        int novoId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        musicasInseridas.Add(ObterPorId(novoId));
+                    }
+                }
+            }
+
+            return musicasInseridas;
+        }
         public Musica Alterar(int id, Musica musica)
         {
             Musica musicaBD = ObterPorId(id);
