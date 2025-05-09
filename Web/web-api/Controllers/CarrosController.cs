@@ -58,12 +58,30 @@ namespace web_api.Controllers
         // POST: api/Carros/Lote
         [HttpPost]
         [Route("api/Carros/Lote")]
-        public void PostLote([FromBody] List<Models.Carro> carros)
+        public IHttpActionResult PostLote([FromBody] List<Models.Carro> carros)
         {
-            //foreach (var carro in carros)
-            //{
-            //    listaCarros.Add(carro);
-            //}
+            bool insertRealizado = false;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    foreach(var carro in carros)
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor})";
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            if (insertRealizado)
+                return Ok();
+            else
+                return BadRequest();
         }
 
         // GET: api/Carros/5
@@ -98,14 +116,17 @@ namespace web_api.Controllers
         }
 
         // POST: api/Carros
-        public void Post([FromBody] Models.Carro carro)
+        public IHttpActionResult Post([FromBody] Models.Carro carro)
         {
             bool insertRealizado = false;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+
+            using 
+            (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand())
+                using 
+                (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor})";
@@ -116,13 +137,13 @@ namespace web_api.Controllers
             }
 
             if (insertRealizado)
-                Ok();
+                return Ok(Get());
             else
-                BadRequest();
+                return BadRequest();
         }
 
         // PUT: api/Carros/5
-        public void Put(int id, [FromBody] Models.Carro carro)
+        public IHttpActionResult Put(int id, [FromBody] Models.Carro carro)
         {
             bool updateRealizado = false;
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -140,13 +161,13 @@ namespace web_api.Controllers
             }
 
             if (updateRealizado)
-                Ok();
+                return Ok();
             else
-                BadRequest();
+                return BadRequest();
         }
 
         // DELETE: api/Carros/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             bool deleteRealizado = false;
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -164,9 +185,9 @@ namespace web_api.Controllers
             }
 
             if (deleteRealizado)
-                Ok();
+                return Ok();
             else
-                BadRequest();
+                return BadRequest();
         }
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="Controllers\CarrosController.cs" />
     <Compile Include="Controllers\ContasController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
+    <Compile Include="Controllers\MusicasController.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -97,8 +98,10 @@
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Conta.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Musica.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MusicaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
