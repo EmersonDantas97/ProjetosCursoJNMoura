@@ -4,21 +4,31 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using web_api.Repository;
 
 namespace web_api.Controllers
 {
     public class ClientesController : ApiController
     {
-        // GET: api/Clientes
-        public IEnumerable<string> Get()
+
+        private readonly ClienteRepository repositorio;
+
+        public ClientesController()
         {
-            return new string[] { "value1", "value2" };
+            repositorio = new ClienteRepository();
+        }
+
+
+        // GET: api/Clientes
+        public IHttpActionResult Get()
+        {
+            return Ok(repositorio.ListaTodos());
         }
 
         // GET: api/Clientes/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            return Ok(repositorio.ListarPorId(id));
         }
 
         // POST: api/Clientes

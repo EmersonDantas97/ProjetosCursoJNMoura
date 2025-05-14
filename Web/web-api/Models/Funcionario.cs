@@ -25,26 +25,5 @@ namespace web_api.Models
         public Funcionario()
         {
         }
-
     }
 }
-
-
-/*
- {
-  "Codigo": 0,
-  "CodigoDepartamento": 0,
-  "PrimeiroNome": null,
-  "SegundoNome": null,
-  "UltimoNome": null,
-  "DataNascimento": "0001-01-01T00:00:00",
-  "CPF": null,
-  "RG": null,
-  "Endereco": null,
-  "CEP": null,
-  "Cidade": null,
-  "Fone": null,
-  "Funcao": null,
-  "Salario": 0.0
-}
- */

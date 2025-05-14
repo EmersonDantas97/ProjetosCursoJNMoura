@@ -29,7 +29,7 @@ namespace web_api.Controllers
             if (musica != null)
                 return Ok(musica);
             else
-                return BadRequest("Id não encontrado!");
+                return NotFound();
         }
 
         // POST: api/Musicas

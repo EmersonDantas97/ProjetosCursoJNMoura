@@ -2,20 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using web_api.Repository;
 
 namespace web_api.Controllers
 {
     public class FuncionariosController : ApiController
     {
+        private readonly FuncionarioRepository funcionarioRepository;
 
-        private static List<Funcionario> listaDeFuncionarios = new List<Funcionario>();
+        public FuncionariosController()
+        {
+            funcionarioRepository = new FuncionarioRepository();
+        }
+
 
         // GET: api/Funcionarios
         public IHttpActionResult Get()
         {
             try
             {
-                return Ok(listaDeFuncionarios);
+                return Ok(funcionarioRepository.ListarTodos());
             }
             catch (Exception)
             {
