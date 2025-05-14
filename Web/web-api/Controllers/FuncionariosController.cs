@@ -8,20 +8,18 @@ namespace web_api.Controllers
 {
     public class FuncionariosController : ApiController
     {
-        private readonly FuncionarioRepository funcionarioRepository;
-
+        private readonly FuncionarioRepository funcionarioRepositorio;
         public FuncionariosController()
         {
-            funcionarioRepository = new FuncionarioRepository();
+            funcionarioRepositorio = new FuncionarioRepository();
         }
-
 
         // GET: api/Funcionarios
         public IHttpActionResult Get()
         {
             try
             {
-                return Ok(funcionarioRepository.ListarTodos());
+                return Ok(funcionarioRepositorio.ListarTodos());
             }
             catch (Exception)
             {
@@ -35,12 +33,13 @@ namespace web_api.Controllers
         {
             try
             {
-                foreach (var item in listaDeFuncionarios)
-                {
-                    if (item.Codigo == id)
-                        return Ok(item);
-                }
-                return NotFound();
+                Models.Funcionario funcionario = funcionarioRepositorio.ListarPorId(id);
+
+                if (funcionario != null)
+                    return Ok(funcionario);
+                else
+                    return NotFound();
+
             }
             catch (Exception)
             {
@@ -57,9 +56,9 @@ namespace web_api.Controllers
                 if (funcionario == null)
                     return BadRequest("Dados não foram enviados!");
 
-                listaDeFuncionarios.Add(funcionario);
-                return Ok();
+                var funcionarioAdicionado = funcionarioRepositorio.Adicionar(funcionario);
 
+                return Ok(funcionarioAdicionado);
             }
             catch (Exception)
             {
@@ -77,10 +76,9 @@ namespace web_api.Controllers
                 if (listaFuncionarios == null)
                     return BadRequest("Dados não foram enviados!");
 
-                foreach (var item in listaFuncionarios)
-                    listaDeFuncionarios.Add(item);
+                var listaDeFuncionariosAdicionados = funcionarioRepositorio.AdicionarEmLote(listaFuncionarios);
 
-                return Ok();
+                return Ok(listaDeFuncionariosAdicionados);
 
             }
             catch (Exception)
@@ -95,29 +93,12 @@ namespace web_api.Controllers
         {
             try
             {
-                foreach (var item in listaDeFuncionarios)
-                {
-                    item.CEP = funcionario.CEP;
-                    item.RG = funcionario.RG;
-                    item.Salario = funcionario.Salario;
-                    item.Cidade = funcionario.Cidade;
-                    item.CodigoDepartamento = funcionario.CodigoDepartamento;
-                    item.CPF = funcionario.CPF;
-                    item.DataNascimento = funcionario.DataNascimento;
-                    item.Endereco = funcionario.Endereco;
-                    item.SegundoNome = funcionario.SegundoNome;
-                    item.UltimoNome = funcionario.UltimoNome;
-                    item.PrimeiroNome = funcionario.PrimeiroNome;
-                    item.Fone = funcionario.Fone;
-                    item.Funcao = funcionario.Funcao;
+                Models.Funcionario funcionarioAlterado = funcionarioRepositorio.Alterar(id, funcionario);
 
-                    // Automapper. Utiliza recurso da máquina, pode utilizar, mas tome cuidado.
-
-                    return Ok(item); // Tenho que retornar o item, para saber como ficou no bd.
-                }
-
-                return NotFound();
-
+                if (funcionarioAlterado != null)
+                    return Ok(funcionarioAlterado);
+                else
+                    return NotFound();
             }
             catch (Exception)
             {
@@ -131,16 +112,13 @@ namespace web_api.Controllers
         {
             try
             {
-                foreach (var item in listaDeFuncionarios)
-                {
-                    if (item.Codigo == id)
-                    {
-                        listaDeFuncionarios.Remove(item);
-                        return Ok();
-                    }
-                }
+                Models.Funcionario funcionarioDeletado = funcionarioRepositorio.Excluir(id);
 
-                return NotFound();
+                if (funcionarioDeletado != null)
+                    return Ok(funcionarioDeletado);
+                else
+                    return NotFound();
+
             }
             catch (Exception)
             {
