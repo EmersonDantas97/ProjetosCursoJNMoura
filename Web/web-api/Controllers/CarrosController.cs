@@ -228,10 +228,7 @@ namespace web_api.Controllers
 //É utilizado o using para dispensar a utilização de:
 //conn.Close();
 //conn.Dispose(); // Marca para garbdge colector excluir da memória. 
-
-/*
-    Reader = Pega dados. 2 colunas x 2 linhas = 4 dados.
-    NonQuery = Insert, Update e Delete.
-    Scalar = Retorna somente 1 dado.
- */
+//Reader = Pega dados. 2 colunas x 2 linhas = 4 dados.
+//NonQuery = Insert, Update e Delete.
+//Scalar = Retorna somente 1 dado.
 

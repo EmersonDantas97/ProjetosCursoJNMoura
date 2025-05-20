@@ -3,14 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using web_api.Repository;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace web_api.Controllers
 {
     public class FuncionariosController : ApiController
     {
         private readonly FuncionarioRepository funcionarioRepositorio;
+        private readonly string _conexao;
         public FuncionariosController()
         {
+            _conexao = ConfigurationManager.ConnectionStrings["ConexaoFuncionario"].ConnectionString;
+            // _conexao = @"Server=DESKTOP-7TLUK34;Database=web-api;Trusted_Connection=True;";
+
             funcionarioRepositorio = new FuncionarioRepository();
         }
 
@@ -19,12 +25,52 @@ namespace web_api.Controllers
         {
             try
             {
-                return Ok(funcionarioRepositorio.ListarTodos());
+                List<Funcionario> listaDeFuncionarios = new List<Funcionario>();
+
+                string scriptSql =
+                    "SELECT Codigo, CodigoDepartamento, PrimeiroNome, SegundoNome, UltimoNome, DataNascimento, CPF, RG, Endereco, CEP, Cidade, Fone, Funcao, Salario " +
+                    "FROM Funcionario;";
+
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = scriptSql;
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            var funcionario = new Funcionario();
+                            
+                            funcionario.Codigo = (int)dr["Id"];
+                            funcionario.CodigoDepartamento = (int)dr["CodigoDepartamento"];
+                            funcionario.PrimeiroNome = (string)dr["PrimeiroNome"];
+                            funcionario.SegundoNome = (string)dr["SegundoNome"];
+                            funcionario.UltimoNome = (string)dr["UltimoNome"];
+                            funcionario.DataNascimento = (DateTime)dr["DataNascimento"];
+                            funcionario.CPF = (string)dr["CPF"];
+                            funcionario.RG = (string)dr["RG"];
+                            funcionario.Endereco = (string)dr["Endereco"];
+                            funcionario.CEP = (string)dr["CEP"];
+                            funcionario.Cidade = (string)dr["Cidade"];
+                            funcionario.Fone = (string)dr["Fone"];
+                            funcionario.Funcao = (string)dr["Funcao"];
+                            funcionario.Salario = Convert.ToDouble(dr["Funcao"]);
+
+                            listaDeFuncionarios.Add(funcionario);
+                        }
+                    }
+                }
+
+                return Ok(listaDeFuncionarios);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
@@ -33,18 +79,51 @@ namespace web_api.Controllers
         {
             try
             {
-                Funcionario funcionario = funcionarioRepositorio.ListarPorId(id);
+                string scriptSql =
+                    "SELECT Codigo, CodigoDepartamento, PrimeiroNome, SegundoNome, UltimoNome, DataNascimento, CPF, RG, Endereco, CEP, Cidade, Fone, Funcao, Salario " +
+                    "FROM Funcionario " +
+                    $"WHERE Id = {id};";
 
-                if (funcionario != null)
-                    return Ok(funcionario);
-                else
-                    return NotFound();
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
 
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = scriptSql;
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            var funcionario = new Funcionario();
+
+                            funcionario.Codigo = (int)dr["Id"];
+                            funcionario.CodigoDepartamento = (int)dr["CodigoDepartamento"];
+                            funcionario.PrimeiroNome = (string)dr["PrimeiroNome"];
+                            funcionario.SegundoNome = (string)dr["SegundoNome"];
+                            funcionario.UltimoNome = (string)dr["UltimoNome"];
+                            funcionario.DataNascimento = (DateTime)dr["DataNascimento"];
+                            funcionario.CPF = (string)dr["CPF"];
+                            funcionario.RG = (string)dr["RG"];
+                            funcionario.Endereco = (string)dr["Endereco"];
+                            funcionario.CEP = (string)dr["CEP"];
+                            funcionario.Cidade = (string)dr["Cidade"];
+                            funcionario.Fone = (string)dr["Fone"];
+                            funcionario.Funcao = (string)dr["Funcao"];
+                            funcionario.Salario = Convert.ToDouble(dr["Funcao"]);
+
+                            if (funcionario.Codigo != 0)
+                                return Ok(funcionario);
+                        }
+                        return NotFound();
+                    }
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
