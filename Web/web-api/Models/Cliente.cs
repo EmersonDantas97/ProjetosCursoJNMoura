@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -17,6 +18,12 @@ namespace web_api.Models
         public DateTime DataCadastro { get; set; }
         public string Observacao { get; set; }
         public Status Status { get; set; }
+
+       
+        private int cpf { get; set; }
+
+
+
 
         public Cliente()
         {

@@ -80,8 +80,8 @@ namespace web_api.Controllers
 
             if (insertRealizado)
                 return Ok();
-            else
-                return BadRequest();
+
+            return BadRequest();
         }
 
         // GET: api/Carros/5
@@ -110,15 +110,15 @@ namespace web_api.Controllers
 
                 if (carro.Id != null)
                     return Ok(carro);
-                else
-                    return BadRequest("Dados não encontrados para o ID informado!");
+
+                return NotFound();
             }
         }
 
         // POST: api/Carros
         public IHttpActionResult Post([FromBody] Models.Carro carro)
         {
-            bool insertRealizado = false;
+            int idGerado = 0;
 
             using 
             (SqlConnection conn = new SqlConnection(connectionString))
@@ -129,23 +129,24 @@ namespace web_api.Controllers
                 (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor})";
+                    cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor});Select scope_identity();";
 
                     // Se inserir uma linha
-                    insertRealizado = cmd.ExecuteNonQuery() > 0 ? true : false ;
+                    idGerado = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
 
-            if (insertRealizado)
-                return Ok(Get());
-            else
-                return BadRequest();
+            if (idGerado != 0)
+                return Ok(Get(idGerado));
+
+            return BadRequest();
         }
 
         // PUT: api/Carros/5
         public IHttpActionResult Put(int id, [FromBody] Models.Carro carro)
         {
             bool updateRealizado = false;
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -162,14 +163,15 @@ namespace web_api.Controllers
 
             if (updateRealizado)
                 return Ok();
-            else
-                return BadRequest();
+            
+            return BadRequest();
         }
 
         // DELETE: api/Carros/5
         public IHttpActionResult Delete(int id)
         {
             bool deleteRealizado = false;
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -180,14 +182,14 @@ namespace web_api.Controllers
                     cmd.CommandText = $"Delete From Carro where Id = {id};";
 
                     // Se inserir uma linha
-                    deleteRealizado = cmd.ExecuteNonQuery() > 0 ? true : false;
+                   deleteRealizado = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
             }
 
             if (deleteRealizado)
                 return Ok();
-            else
-                return BadRequest();
+
+            return NotFound();
         }
     }
 }

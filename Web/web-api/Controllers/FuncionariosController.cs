@@ -33,7 +33,7 @@ namespace web_api.Controllers
         {
             try
             {
-                Models.Funcionario funcionario = funcionarioRepositorio.ListarPorId(id);
+                Funcionario funcionario = funcionarioRepositorio.ListarPorId(id);
 
                 if (funcionario != null)
                     return Ok(funcionario);
@@ -112,7 +112,7 @@ namespace web_api.Controllers
         {
             try
             {
-                Models.Funcionario funcionarioDeletado = funcionarioRepositorio.Excluir(id);
+                Funcionario funcionarioDeletado = funcionarioRepositorio.Excluir(id);
 
                 if (funcionarioDeletado != null)
                     return Ok(funcionarioDeletado);
