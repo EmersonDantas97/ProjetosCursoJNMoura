@@ -1,0 +1,18 @@
+Data:21/05/2025 20:34:04
+ Erro:A propriedade ConnectionString não foi inicializada.
+ StackTrace:   em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em web_api.Controllers.CarrosController.Get()
+Data:21/05/2025 20:36:42
+ Erro:A propriedade ConnectionString não foi inicializada.
+ StackTrace:   em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em web_api.Controllers.CarrosController.Get() na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\Controllers\CarrosController.cs:linha 35

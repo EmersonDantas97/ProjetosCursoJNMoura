@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
-using web_api.Repository;
 using System.Data.SqlClient;
 using System.Configuration;
 

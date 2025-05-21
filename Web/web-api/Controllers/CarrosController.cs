@@ -2,7 +2,10 @@
 using System.Web.Http;
 using System.Data.SqlClient;
 using web_api.Models;
+using System.Data;
 using System;
+using System.IO;
+
 
 namespace web_api.Controllers
 {
@@ -12,7 +15,9 @@ namespace web_api.Controllers
 
         public CarrosController()
         {
-            this.connectionString = "Server=DESKTOP-7TLUK34;Database=web-api;Trusted_Connection=True;";
+            this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["web_api"].ConnectionString;
+            // Utilizar o nome, para evitar erro de alguém inserir alguma conexao e mudar o indice;
+
         }
 
         // GET: api/Carros
@@ -22,7 +27,10 @@ namespace web_api.Controllers
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+
+                string caminho = "";
+                //using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(caminho))
                 {
                     conn.Open();
 
@@ -50,6 +58,79 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
+                /*
+                    1 - try catch em todos os método do controlador carro
+                    2 - fazer todos métodos logarem os erros
+                    3 - colocar o caminho do log no web.config em appsettings 
+                */
+
+                return InternalServerError(ex);
+            }
+        }
+
+        // GET: api/Carros
+        [Route("api/Carros/{nome}")]
+        public IHttpActionResult Get(string nome)
+        {
+            try
+            {
+                if (nome.Length < 3)
+                    return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
+
+                List<Models.Carro> listaCarros = new List<Models.Carro>();
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "Select Id, Nome, Valor from Carro where nome like @nome;";
+
+                        cmd.Parameters.Add(new SqlParameter("@nome",SqlDbType.VarChar)).Value = $"%{nome}%";
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            Carro carro = new Carro();
+
+                            carro.Id = (int)dr["Id"];
+                            carro.Nome = (string)dr["Nome"];
+                            carro.Valor = Convert.ToDouble(dr["Valor"]);
+
+                            listaCarros.Add(carro);
+                        }
+                    } // Dispose feito pelo using;
+                } // Dispose e close feitos pelo using;
+
+                return Ok(listaCarros);
+            }
+            catch (Exception ex)
+            {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
@@ -68,7 +149,9 @@ namespace web_api.Controllers
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = $"Select Id, Nome, Valor from Carro where Id = {id};";
+                        cmd.CommandText = "Select Id, Nome, Valor from Carro where Id = @Id;";
+
+                        cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
                         SqlDataReader dr = cmd.ExecuteReader();
 
@@ -88,14 +171,29 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
+
         // POST: api/Carros
         public IHttpActionResult Post([FromBody] Models.Carro carro)
         {
             try
             {
+                string scriptSql =
+                    "Insert into Carro (Nome, Valor) values (@Nome,@Valor);Select scope_identity();";
+
                 if (carro == null)
                     return BadRequest("Os dados do carro não foram enviados corretamente!");
                 
@@ -106,7 +204,16 @@ namespace web_api.Controllers
                     using(SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor});Select scope_identity();";
+                        cmd.CommandText = scriptSql;
+
+                        //Evitando sqlinjection. 
+                        //cmd.Parameters.Add(new SqlParameter("@Nome",System.Data.SqlDbType.VarChar)).Value = carro.Nome;
+                        //cmd.Parameters.Add(new SqlParameter("@Nome",System.Data.SqlDbType.VarChar,100)).Value = carro.Nome; -- Não colocar tamanho, pois vai truncar.
+                        //cmd.Parameters.Add(new SqlParameter("@Valor",System.Data.SqlDbType.Decimal)).Value = carro.Valor;
+                        //A instrução completa do sql, é montada pelo SGBD.
+
+                        cmd.Parameters.Add(new SqlParameter("@Nome", SqlDbType.VarChar)).Value = carro.Nome;
+                        cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
 
                         carro.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     }
@@ -116,6 +223,17 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
@@ -138,7 +256,10 @@ namespace web_api.Controllers
                         foreach (var carro in carros)
                         {
                             cmd.Connection = conn;
-                            cmd.CommandText = $"Insert into Carro (Nome, Valor) values ('{carro.Nome}',{carro.Valor});select scope_identity();";
+                            cmd.CommandText = "Insert into Carro (Nome, Valor) values (@Nome,@Valor);select scope_identity();";
+
+                            cmd.Parameters.Add(new SqlParameter("@Nome", SqlDbType.VarChar)).Value = carro.Nome;
+                            cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
 
                             carro.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -150,6 +271,17 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
@@ -174,7 +306,11 @@ namespace web_api.Controllers
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = $"Update Carro Set Nome = '{carro.Nome}', Valor = {carro.Valor} where Id = {id};";
+                        cmd.CommandText = "Update Carro Set Nome = @Nome, Valor = @Valor where Id = @Id;";
+
+                        cmd.Parameters.Add(new SqlParameter("@Nome", SqlDbType.VarChar)).Value = carro.Nome;
+                        cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
+                        cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
                         linhasAfetadas = cmd.ExecuteNonQuery();
                     }
@@ -187,6 +323,17 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
@@ -205,7 +352,9 @@ namespace web_api.Controllers
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = $"Delete From Carro where Id = {id};";
+                        cmd.CommandText = "Delete From Carro where Id = @Id;";
+
+                        cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
                         // Se inserir uma linha
                         linhasAfetadas = cmd.ExecuteNonQuery();
@@ -219,6 +368,17 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
+                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                {
+                    sw.Write("Data:");
+                    sw.WriteLine(DateTime.Now.ToString("G"));
+                    sw.Write(" Erro:");
+                    sw.WriteLine(ex.Message);
+                    sw.Write(" StackTrace:");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine();
+                }
+
                 return InternalServerError(ex);
             }
         }
