@@ -10,14 +10,11 @@ namespace web_api.Controllers
 {
     public class FuncionariosController : ApiController
     {
-        private readonly FuncionarioRepository funcionarioRepositorio;
         private readonly string _conexao;
         public FuncionariosController()
         {
             _conexao = ConfigurationManager.ConnectionStrings["ConexaoFuncionario"].ConnectionString;
             // _conexao = @"Server=DESKTOP-7TLUK34;Database=web-api;Trusted_Connection=True;";
-
-            funcionarioRepositorio = new FuncionarioRepository();
         }
 
         // GET: api/Funcionarios
@@ -46,10 +43,10 @@ namespace web_api.Controllers
                         {
                             var funcionario = new Funcionario();
                             
-                            funcionario.Codigo = (int)dr["Id"];
+                            funcionario.Codigo = (int)dr["Codigo"];
                             funcionario.CodigoDepartamento = (int)dr["CodigoDepartamento"];
                             funcionario.PrimeiroNome = (string)dr["PrimeiroNome"];
-                            funcionario.SegundoNome = (string)dr["SegundoNome"];
+                            funcionario.SegundoNome = dr["SegundoNome"].ToString();
                             funcionario.UltimoNome = (string)dr["UltimoNome"];
                             funcionario.DataNascimento = (DateTime)dr["DataNascimento"];
                             funcionario.CPF = (string)dr["CPF"];
@@ -59,7 +56,7 @@ namespace web_api.Controllers
                             funcionario.Cidade = (string)dr["Cidade"];
                             funcionario.Fone = (string)dr["Fone"];
                             funcionario.Funcao = (string)dr["Funcao"];
-                            funcionario.Salario = Convert.ToDouble(dr["Funcao"]);
+                            funcionario.Salario = Convert.ToDouble(dr["Salario"]);
 
                             listaDeFuncionarios.Add(funcionario);
                         }
@@ -82,7 +79,7 @@ namespace web_api.Controllers
                 string scriptSql =
                     "SELECT Codigo, CodigoDepartamento, PrimeiroNome, SegundoNome, UltimoNome, DataNascimento, CPF, RG, Endereco, CEP, Cidade, Fone, Funcao, Salario " +
                     "FROM Funcionario " +
-                    $"WHERE Id = {id};";
+                    $"WHERE Codigo = {id};";
 
                 using (SqlConnection conn = new SqlConnection(_conexao))
                 {
@@ -99,10 +96,10 @@ namespace web_api.Controllers
                         {
                             var funcionario = new Funcionario();
 
-                            funcionario.Codigo = (int)dr["Id"];
+                            funcionario.Codigo = (int)dr["Codigo"];
                             funcionario.CodigoDepartamento = (int)dr["CodigoDepartamento"];
                             funcionario.PrimeiroNome = (string)dr["PrimeiroNome"];
-                            funcionario.SegundoNome = (string)dr["SegundoNome"];
+                            funcionario.SegundoNome = dr["SegundoNome"].ToString();
                             funcionario.UltimoNome = (string)dr["UltimoNome"];
                             funcionario.DataNascimento = (DateTime)dr["DataNascimento"];
                             funcionario.CPF = (string)dr["CPF"];
@@ -112,7 +109,7 @@ namespace web_api.Controllers
                             funcionario.Cidade = (string)dr["Cidade"];
                             funcionario.Fone = (string)dr["Fone"];
                             funcionario.Funcao = (string)dr["Funcao"];
-                            funcionario.Salario = Convert.ToDouble(dr["Funcao"]);
+                            funcionario.Salario = Convert.ToDouble(dr["Salario"]);
 
                             if (funcionario.Codigo != 0)
                                 return Ok(funcionario);
@@ -133,16 +130,32 @@ namespace web_api.Controllers
             try
             {
                 if (funcionario == null)
-                    return BadRequest("Dados não foram enviados!");
+                    return BadRequest("Os dados do funcionário não foram enviados corretamente!");
 
-                var funcionarioAdicionado = funcionarioRepositorio.Adicionar(funcionario);
+                string scriptSql =
+                    "INSERT INTO Funcionario (CodigoDepartamento, PrimeiroNome, SegundoNome, UltimoNome, DataNascimento, CPF, RG, Endereco, CEP, Cidade, Fone, Funcao, Salario) " +
+                    $"VALUES ({funcionario.CodigoDepartamento}, '{funcionario.PrimeiroNome}', '{funcionario.SegundoNome}', '{funcionario.UltimoNome}', '{funcionario.DataNascimento}', '{funcionario.CPF}', '{funcionario.RG}', '{funcionario.Endereco}', '{funcionario.CEP}', '{funcionario.Cidade}', '{funcionario.Fone}', '{funcionario.Funcao}', {funcionario.Salario}); " +
+                    $"SELECT scope_identity();";
 
-                return Ok(funcionarioAdicionado);
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = scriptSql;
+
+
+                        funcionario.Codigo = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+
+                return Ok(funcionario);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
@@ -152,18 +165,41 @@ namespace web_api.Controllers
         {
             try
             {
+                List<Funcionario> funcionariosAdicionados = new List<Funcionario>();
+
+
                 if (listaFuncionarios == null)
-                    return BadRequest("Dados não foram enviados!");
+                    return BadRequest("Os dados do funcionário não foram enviados corretamente!");
 
-                var listaDeFuncionariosAdicionados = funcionarioRepositorio.AdicionarEmLote(listaFuncionarios);
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
 
-                return Ok(listaDeFuncionariosAdicionados);
 
+                    foreach (var funcionario in listaFuncionarios)
+                    {
+                        string scriptSql =
+                            "INSERT INTO Funcionario (CodigoDepartamento, PrimeiroNome, SegundoNome, UltimoNome, DataNascimento, CPF, RG, Endereco, CEP, Cidade, Fone, Funcao, Salario) " +
+                            $"VALUES ({funcionario.CodigoDepartamento}, '{funcionario.PrimeiroNome}', '{funcionario.SegundoNome}', '{funcionario.UltimoNome}', '{funcionario.DataNascimento}', '{funcionario.CPF}', '{funcionario.RG}', '{funcionario.Endereco}', '{funcionario.CEP}', '{funcionario.Cidade}', '{funcionario.Fone}', '{funcionario.Funcao}', {funcionario.Salario}); " +
+                            $"SELECT scope_identity();";
+
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            cmd.CommandText = scriptSql;
+
+                            funcionario.Codigo = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            funcionariosAdicionados.Add(funcionario);
+                        } 
+                    }
+                }
+
+                return Ok(funcionariosAdicionados);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
@@ -172,17 +208,52 @@ namespace web_api.Controllers
         {
             try
             {
-                Models.Funcionario funcionarioAlterado = funcionarioRepositorio.Alterar(id, funcionario);
+                if (funcionario == null)
+                    return BadRequest("Os dados do funcionário não foram enviados corretamente!");
 
-                if (funcionarioAlterado != null)
-                    return Ok(funcionarioAlterado);
-                else
-                    return NotFound();
+                if (funcionario.Codigo != id)
+                    return BadRequest("O Id da rota não corresponde ao código do funcionário");
+
+                int linhasAfetadas = 0;
+
+                string scriptSql =
+                    "UPDATE Funcionario " +
+                    $"Set PrimeiroNome = '{funcionario.PrimeiroNome}', " +
+                    $"SegundoNome = '{funcionario.SegundoNome}', " +
+                    $"UltimoNome = '{funcionario.UltimoNome}', " +
+                    $"CodigoDepartamento = {funcionario.CodigoDepartamento}, " +
+                    $"DataNascimento = '{funcionario.DataNascimento}', " +
+                    $"CPF = '{funcionario.CPF}', " +
+                    $"RG = '{funcionario.RG}', " +
+                    $"Endereco = '{funcionario.Endereco}', " +
+                    $"CEP = '{funcionario.CEP}', " +
+                    $"Cidade = '{funcionario.Cidade}', " +
+                    $"Fone = '{funcionario.Fone}', " +
+                    $"Funcao = '{funcionario.Funcao}', " +
+                    $"Salario = {funcionario.Salario} " +
+                    $"WHERE Codigo = {id};";
+
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = scriptSql;
+
+                        linhasAfetadas = cmd.ExecuteNonQuery();
+                    }
+                }
+
+                if (linhasAfetadas > 0)
+                    return Ok(funcionario);
+
+                return NotFound();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
@@ -191,18 +262,33 @@ namespace web_api.Controllers
         {
             try
             {
-                Funcionario funcionarioDeletado = funcionarioRepositorio.Excluir(id);
+                int linhasAfetadas = 0;
 
-                if (funcionarioDeletado != null)
-                    return Ok(funcionarioDeletado);
-                else
-                    return NotFound();
+                string scriptSql =
+                    "DELETE FROM Funcionario " +
+                    $"WHERE Codigo = {id};";
 
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = scriptSql;
+
+                        linhasAfetadas = cmd.ExecuteNonQuery();
+                    }
+                }
+
+                if (linhasAfetadas > 0)
+                    return Ok();
+
+                return NotFound();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Logar Ex
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
     }
