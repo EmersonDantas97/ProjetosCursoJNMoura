@@ -12,12 +12,12 @@ namespace web_api.Controllers
     public class CarrosController : ApiController
     {
         private readonly string connectionString;
+        private readonly string diretorioArqLogs;
 
         public CarrosController()
         {
-            this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["web_api"].ConnectionString;
-            // Utilizar o nome, para evitar erro de alguém inserir alguma conexao e mudar o indice;
-
+            this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["web_api"].ConnectionString; // Utilizar o nome, para evitar erro de alguém inserir alguma conexao e mudar o indice;
+            this.diretorioArqLogs = System.Configuration.ConfigurationManager.AppSettings["DiretorioLogs"];
         }
 
         // GET: api/Carros
@@ -27,10 +27,7 @@ namespace web_api.Controllers
 
             try
             {
-
-                string caminho = "";
-                //using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlConnection conn = new SqlConnection(caminho))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
@@ -58,24 +55,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                /*
-                    1 - try catch em todos os método do controlador carro
-                    2 - fazer todos métodos logarem os erros
-                    3 - colocar o caminho do log no web.config em appsettings 
-                */
-
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
@@ -83,11 +74,11 @@ namespace web_api.Controllers
         [Route("api/Carros/{nome}")]
         public IHttpActionResult Get(string nome)
         {
+            if (nome.Length < 3)
+                return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
+            
             try
             {
-                if (nome.Length < 3)
-                    return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
-
                 List<Models.Carro> listaCarros = new List<Models.Carro>();
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -120,18 +111,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
@@ -171,31 +162,31 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
         // POST: api/Carros
         public IHttpActionResult Post([FromBody] Models.Carro carro)
         {
+            if (carro == null)
+                return BadRequest("Os dados do carro não foram enviados corretamente!");
+
             try
             {
                 string scriptSql =
                     "Insert into Carro (Nome, Valor) values (@Nome,@Valor);Select scope_identity();";
-
-                if (carro == null)
-                    return BadRequest("Os dados do carro não foram enviados corretamente!");
                 
                 using(SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -223,18 +214,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
@@ -271,18 +262,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
@@ -323,18 +314,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
 
@@ -368,18 +359,18 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(DiretoriosSistema.DiretorioArquivoLogs(), true))
+                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
                 {
                     sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("G"));
-                    sw.Write(" Erro:");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    sw.Write("Erro:");
                     sw.WriteLine(ex.Message);
-                    sw.Write(" StackTrace:");
+                    sw.Write("StackTrace:");
                     sw.WriteLine(ex.StackTrace);
                     sw.WriteLine();
                 }
 
-                return InternalServerError(ex);
+                return InternalServerError();
             }
         }
     }
