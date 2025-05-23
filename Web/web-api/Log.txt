@@ -40,3 +40,20 @@ StackTrace:   em System.Data.SqlClient.SqlParameter.CoerceValue(Object value, Me
    em System.Data.SqlClient.SqlCommand.ExecuteReader()
    em web_api.Controllers.PessoasController.Get(String nome) na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\Controllers\PessoasController.cs:linha 145
 
+Data e Hora: 2025-05-23 11:34:08Erro: A propriedade ConnectionString não foi inicializada.StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em web_api.Controllers.ProdutosController.Post(Produto produto) na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\Controllers\ProdutosController.cs:linha 98
+Data e Hora: 2025-05-23 11:35:59Erro: A propriedade ConnectionString não foi inicializada.StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em web_api.Controllers.ProdutosController.Post(Produto produto) na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\Controllers\ProdutosController.cs:linha 98
+Data e Hora: 2025-05-23 11:48:20Erro: Conversão especificada não é válida.StackTrace:   em web_api.Controllers.ProdutosController.Get()
+Data e Hora: 2025-05-23 11:54:12Erro: Conversão especificada não é válida.StackTrace:   em web_api.Controllers.ProdutosController.Get() na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\Controllers\ProdutosController.cs:linha 45
+Data e Hora: 2025-05-23 11:55:23Erro: Conversão especificada não é válida.StackTrace:   em web_api.Controllers.ProdutosController.Get()
