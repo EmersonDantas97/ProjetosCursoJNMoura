@@ -5,6 +5,7 @@ using web_api.Models;
 using System.Data;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 
 namespace web_api.Controllers
@@ -16,27 +17,28 @@ namespace web_api.Controllers
 
         public CarrosController()
         {
-            this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["web_api"].ConnectionString; // Utilizar o nome, para evitar erro de alguém inserir alguma conexao e mudar o indice;
-            this.diretorioArqLogs = System.Configuration.ConfigurationManager.AppSettings["DiretorioLogs"];
+            //this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["web_api"].ConnectionString; // Utilizar o nome, para evitar erro de alguém inserir alguma conexao e mudar o indice;
+            this.connectionString = Configurations.Config.GetConnectionString("web_api");
+            this.diretorioArqLogs = Configurations.Config.GetLogPath();
         }
 
         // GET: api/Carros
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
-            List<Models.Carro> listaCarros = new List<Models.Carro>();
-
             try
             {
+                List<Models.Carro> listaCarros = new List<Models.Carro>();
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
                         cmd.CommandText = "Select Id, Nome, Valor from Carro;";
 
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SqlDataReader dr = await cmd.ExecuteReaderAsync();
 
                         while (dr.Read())
                         {
@@ -55,16 +57,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -72,7 +65,7 @@ namespace web_api.Controllers
 
         // GET: api/Carros
         [Route("api/Carros/{nome}")]
-        public IHttpActionResult Get(string nome)
+        public async Task<IHttpActionResult> Get(string nome)
         {
             if (nome.Length < 3)
                 return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
@@ -83,7 +76,7 @@ namespace web_api.Controllers
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -92,9 +85,9 @@ namespace web_api.Controllers
 
                         cmd.Parameters.Add(new SqlParameter("@nome",SqlDbType.VarChar)).Value = $"%{nome}%";
 
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SqlDataReader dr = await cmd.ExecuteReaderAsync();
 
-                        while (dr.Read())
+                        while (await dr.ReadAsync())
                         {
                             Carro carro = new Carro();
 
@@ -111,31 +104,22 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
         }
 
         // GET: api/Carros/5
-        public IHttpActionResult Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
-            Carro carro = new Carro();
-
             try
             {
+                Carro carro = new Carro();
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -144,9 +128,9 @@ namespace web_api.Controllers
 
                         cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SqlDataReader dr = await cmd.ExecuteReaderAsync();
 
-                        if (dr.Read())
+                        if (await dr.ReadAsync())
                         {
                             carro.Id = (int)dr["Id"];
                             carro.Nome = dr["Nome"].ToString();
@@ -162,23 +146,14 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
         }
 
         // POST: api/Carros
-        public IHttpActionResult Post([FromBody] Models.Carro carro)
+        public async Task<IHttpActionResult> Post([FromBody] Models.Carro carro)
         {
             if (carro == null)
                 return BadRequest("Os dados do carro não foram enviados corretamente!");
@@ -190,7 +165,7 @@ namespace web_api.Controllers
                 
                 using(SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using(SqlCommand cmd = new SqlCommand())
                     {
@@ -206,7 +181,7 @@ namespace web_api.Controllers
                         cmd.Parameters.Add(new SqlParameter("@Nome", SqlDbType.VarChar)).Value = carro.Nome;
                         cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
 
-                        carro.Id = Convert.ToInt32(cmd.ExecuteScalar());
+                        carro.Id = Convert.ToInt32(await cmd.ExecuteScalarAsync());
                     }
                 }
 
@@ -214,16 +189,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -232,15 +198,15 @@ namespace web_api.Controllers
         // POST: api/Carros/Lote
         [HttpPost]
         [Route("api/Carros/Lote")]
-        public IHttpActionResult PostLote([FromBody] List<Models.Carro> carros)
+        public async Task<IHttpActionResult> PostLote([FromBody] List<Models.Carro> carros)
         {
-            List<Carro> listaDeCarrosAdicionados = new List<Carro>();
-
             try
             {
+                List<Carro> listaDeCarrosAdicionados = new List<Carro>();
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -252,7 +218,7 @@ namespace web_api.Controllers
                             cmd.Parameters.Add(new SqlParameter("@Nome", SqlDbType.VarChar)).Value = carro.Nome;
                             cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
 
-                            carro.Id = Convert.ToInt32(cmd.ExecuteScalar());
+                            carro.Id = Convert.ToInt32(await cmd.ExecuteScalarAsync());
 
                             listaDeCarrosAdicionados.Add(carro);
                         }
@@ -262,23 +228,14 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
         }
 
         // PUT: api/Carros/5
-        public IHttpActionResult Put(int id, [FromBody] Models.Carro carro)
+        public async Task<IHttpActionResult> Put(int id, [FromBody] Models.Carro carro)
         {
             if (carro == null)
                 return BadRequest("Os dados do carro não foram enviados corretamente!");
@@ -292,7 +249,7 @@ namespace web_api.Controllers
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -303,7 +260,7 @@ namespace web_api.Controllers
                         cmd.Parameters.Add(new SqlParameter("@Valor", SqlDbType.Decimal)).Value = carro.Valor;
                         cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
-                        linhasAfetadas = cmd.ExecuteNonQuery();
+                        linhasAfetadas = await cmd.ExecuteNonQueryAsync();
                     }
                 }
 
@@ -330,15 +287,15 @@ namespace web_api.Controllers
         }
 
         // DELETE: api/Carros/5
-        public IHttpActionResult Delete(int id)
+        public async Task<IHttpActionResult> Delete(int id)
         {
-            int linhasAfetadas = 0;
-
             try
             {
+                int linhasAfetadas = 0;
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    await conn.OpenAsync();
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -348,7 +305,7 @@ namespace web_api.Controllers
                         cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)).Value = id;
 
                         // Se inserir uma linha
-                        linhasAfetadas = cmd.ExecuteNonQuery();
+                        linhasAfetadas = await cmd.ExecuteNonQueryAsync();
                     }
                 }
 
@@ -359,16 +316,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                using (StreamWriter sw = new StreamWriter(diretorioArqLogs, true))
-                {
-                    sw.Write("Data:");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    sw.Write("Erro:");
-                    sw.WriteLine(ex.Message);
-                    sw.Write("StackTrace:");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                }
+                Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }

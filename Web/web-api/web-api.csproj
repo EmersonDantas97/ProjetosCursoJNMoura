@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Configurations\Config.cs" />
     <Compile Include="Controllers\BrinquedosController.cs" />
     <Compile Include="Controllers\CarrosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Repository\FuncionarioRepository.cs" />
     <Compile Include="Repository\MusicaRepository.cs" />
     <Compile Include="Repository\ProdutoRepository.cs" />
+    <Compile Include="Utils\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -148,7 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Interface\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
