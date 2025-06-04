@@ -1,0 +1,10 @@
+Tive vontade de colocar mais validações, como por exemplo valor não pode ser zero. 
+
+Ter no mínimo 3 caracteres o nome do veículo. 
+
+>> Tive que colocar os campos como nullabel para aceitar a mensagem de erro do DataAnnotation.
+
+>> Tentei seguir ao máximo também os nomes 
+
+
+Quem faz a transformação é 

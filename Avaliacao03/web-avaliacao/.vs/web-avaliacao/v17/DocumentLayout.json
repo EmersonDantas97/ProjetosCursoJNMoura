@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\avaliacao03\\web-avaliacao\\web-api\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\avaliacao03\\web-avaliacao\\web-api\\models\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|solutionrelative:web-api\\models\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\avaliacao03\\web-avaliacao\\web-api\\repositories\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C31BE3-5693-4614-ABD4-C79DC8779B9E}|web-api\\web-api.csproj|solutionrelative:web-api\\repositories\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 84,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VeiculosController.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Controllers\\VeiculosController.cs",
+              "RelativeDocumentMoniker": "web-api\\Controllers\\VeiculosController.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Controllers\\VeiculosController.cs",
+              "RelativeToolTip": "web-api\\Controllers\\VeiculosController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAzwBoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:24:33.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Veiculo.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Models\\Veiculo.cs",
+              "RelativeDocumentMoniker": "web-api\\Models\\Veiculo.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Models\\Veiculo.cs",
+              "RelativeToolTip": "web-api\\Models\\Veiculo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:05:49.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Veiculo.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Repositories\\Veiculo.cs",
+              "RelativeDocumentMoniker": "web-api\\Repositories\\Veiculo.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao03\\web-avaliacao\\web-api\\Repositories\\Veiculo.cs",
+              "RelativeToolTip": "web-api\\Repositories\\Veiculo.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAEwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:52:59.613Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 84,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
