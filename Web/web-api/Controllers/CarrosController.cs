@@ -73,7 +73,7 @@ namespace web_api.Controllers
         // POST: api/Carros
         public async Task<IHttpActionResult> Post([FromBody] Models.Carro carro)
         {
-            if (carro == null)
+            if(carro is null || !ModelState.IsValid)
                 return BadRequest("Os dados do carro não foram enviados corretamente!");
 
             try

@@ -111,12 +111,14 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\Config.cs" />
+    <Compile Include="Controllers\aaaController.cs" />
     <Compile Include="Controllers\BrinquedosController.cs" />
     <Compile Include="Controllers\CarrosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ContasController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
+    <Compile Include="Controllers\MotosController.cs" />
     <Compile Include="Controllers\MusicasController.cs" />
     <Compile Include="Controllers\NomesController.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Models\Conta.cs" />
     <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Moto.cs" />
     <Compile Include="Models\Musica.cs" />
     <Compile Include="Models\Nome.cs" />
     <Compile Include="Models\Pessoa.cs" />
@@ -137,7 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Carro.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\Funcionario.cs" />
     <Compile Include="Repositories\FuncionarioRepository.cs" />
+    <Compile Include="Repositories\Moto.cs" />
     <Compile Include="Repositories\MusicaRepository.cs" />
     <Compile Include="Repositories\Pessoa.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />

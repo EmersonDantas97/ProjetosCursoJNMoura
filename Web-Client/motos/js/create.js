@@ -2,7 +2,7 @@ function GoToIndex() {
     document.location = 'index.html';
 }
 
-function GetCarro() {
+function GetMoto() {
     return {
         nome: document.getElementById("nome").value,
         valor: document.getElementById("valor").value
@@ -10,28 +10,25 @@ function GetCarro() {
 }
 
 function GetURL() {
-    return "https://localhost:44360/api/carros";
+    return "https://localhost:44360/api/Motos";
 }
 
-function ValidarDados(carro) {
-    return carro.nome !== "" && carro.valor !== "";
+function ValidarDados(moto) {
+    return moto.nome !== "" && moto.valor !== "";
 }
 
 function Incluir() {
 
-    // console.log("Inicio-Incluir");
-
-    const carro = GetCarro();
+    const moto = GetMoto(); // 
 
     const url = GetURL();
 
-    if (ValidarDados(carro)) {
-
+    if (ValidarDados(moto)) {
 
         fetch(url, {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify(carro)
+            body: JSON.stringify(moto)
         })
             .then(
                 (response) => {
@@ -42,10 +39,10 @@ function Incluir() {
                         alert("Dados incluídos com sucesso!");
                         GoToIndex();
                     }
-                    else if (response.status === 400) { // return BadRequest();
+                    else if (response.status == 400) {
                         alert("Erro no envio de dados!");
                     }
-                    else if (response.status === 500) { // return InternalServerError()
+                    else if (response.status == 500) {
                         alert("Erro interno do servidor!\n Entre em contato com o suporte.");
                     }
                     else {
@@ -62,6 +59,4 @@ function Incluir() {
     else {
         alert("Por favor, preencha todos os dados!");
     }
-
-    // console.log("Fim-Incluir");
 }
