@@ -1,67 +1,93 @@
-function GoToIndex() {
+function GoToIndex(){
     document.location = 'index.html';
 }
 
-function GetCarro() {
+function GetCarro(){
     return {
-        nome: document.getElementById("nome").value,
-        valor: document.getElementById("valor").value
+        nome: GetInputNome().value,
+        valor: GetInputValor().value
     }
 }
 
-function GetURL() {
-    return "https://localhost:44360/api/carros";
+function GetURL(){
+    return "https://localhost:44308/api/carros";
 }
 
-function ValidarDados(carro) {
+function Validate(carro){
     return carro.nome !== "" && carro.valor !== "";
 }
 
-function Incluir() {
+function EnableButtonIncluir(){
+    GetButtonIncluir().disabled = false;
+}
 
-    // console.log("Inicio-Incluir");
+function DisableButtonIncluir(){
+    GetButtonIncluir().disabled = true;
+}
 
-    const carro = GetCarro();
+function GetButtonIncluir(){
+    return document.querySelector("#btnIncluir");
+}
+
+function GetInputNome(){
+    return document.querySelector("#nome");
+}
+
+function GetInputValor(){
+    return document.querySelector("#valor");
+}
+
+function Add(){
+        
+    //console.log("Início-Incluir");
 
     const url = GetURL();
 
-    if (ValidarDados(carro)) {
+    const carro = GetCarro();
 
+    //console.log(carro);
+    //console.log(JSON.stringify(carro));
+
+    if (Validate(carro)){
+
+        DisableButtonIncluir();
 
         fetch(url, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(carro)
-        })
-            .then(
-                (response) => {
-
-                    console.log(response);
-
+                method: "POST",
+                headers: {"content-type":"application/json"},
+                body: JSON.stringify(carro)
+            })
+            .then(                            
+                (response) => {                
+                    //console.log(response);
                     if (response.ok) {
-                        alert("Dados incluídos com sucesso!");
+                        alert('Carro incluído com sucesso!');
                         GoToIndex();
                     }
-                    else if (response.status === 400) { // return BadRequest();
+                    else if (response.status === 400){
                         alert("Erro no envio de dados!");
                     }
-                    else if (response.status === 500) { // return InternalServerError()
-                        alert("Erro interno do servidor!\n Entre em contato com o suporte.");
+                    else if (response.status === 500){
+                        alert("Erro interno de servidor! \n Entre em contato com o suporte.");
                     }
-                    else {
-                        console.log("Erro na resposta!\n Entre em contato com o suporte.")
+                    else{
+                        alert("Erro na resposta! \n Entre em contato com o suporte.");
                     }
-                }
+                    
+                    EnableButtonIncluir();                    
+                }                
             )
-            .catch(
+            .catch(            
                 (error) => {
-                    console.log("Erro na requisição!\n Entre em contato com o suporte.");
-                }
-            );
-    }
-    else {
+                    //console.log(error);                
+                    alert("Erro na requisição! \n Entre em contato com o suporte.");                    
+                    EnableButtonIncluir();
+                } 
+            );       
+    }else{
         alert("Por favor, preencha todos os dados!");
     }
-
-    // console.log("Fim-Incluir");
+    
+    //console.log("Fim-Incluir");     
 }
+

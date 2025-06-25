@@ -37,9 +37,28 @@ namespace web_api.Repositories
             }
         }
 
-        public async Task Update(Models.Moto moto)
+        public async Task<bool> Update(Models.Moto moto)
         {
-            throw new NotImplementedException();
+            int linhasAfetadas = 0;
+
+            using (conn)
+            {
+                await conn.OpenAsync();
+
+                using (cmd)
+                {
+                    cmd.CommandText = "UPDATE ";
+
+                    AdicionarParametrosPadrao(moto);
+
+                    cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.Int)).Value = moto.Id;
+                }
+            }
+
+
+
+
+                throw new NotImplementedException();
         }
 
         private void AdicionarParametrosPadrao(Models.Moto moto)

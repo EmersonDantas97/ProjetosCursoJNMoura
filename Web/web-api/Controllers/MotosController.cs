@@ -55,27 +55,27 @@ namespace web_api.Controllers
         }
 
         // PUT: api/Motos/5
-        public async Task<IHttpActionResult> Put(int id, [FromBody] Models.Moto moto)
-        {
-            if (moto is null || !ModelState.IsValid)
-                return BadRequest("Os dados da moto não foram enviados corretamente!");
+        //public async Task<IHttpActionResult> Put(int id, [FromBody] Models.Moto moto)
+        //{
+        //    if (moto is null || !ModelState.IsValid)
+        //        return BadRequest("Os dados da moto não foram enviados corretamente!");
 
-            if (moto.Id != id)
-                return BadRequest("O id da rota não corresponde com o id da moto!");
+        //    if (moto.Id != id)
+        //        return BadRequest("O id da rota não corresponde com o id da moto!");
 
-            try
-            {
-                await repository.Update(moto);
+        //    try
+        //    {
+        //        var resposta = await repository.Update(moto);
 
 
 
-            }
-            catch (Exception)
-            {
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
         // DELETE: api/Motos/5
         public void Delete(int id)
