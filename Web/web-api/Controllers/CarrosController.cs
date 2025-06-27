@@ -35,8 +35,8 @@ namespace web_api.Controllers
         [Route("api/Carros/{nome:alpha}")]
         public async Task<IHttpActionResult> Get(string nome)
         {
-            if (nome.Length < 3)
-                return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
+            //if (nome.Length < 3)
+            //    return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
 
             try
             { 

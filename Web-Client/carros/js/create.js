@@ -9,10 +9,6 @@ function GetCarro(){
     }
 }
 
-function GetURL(){
-    return "https://localhost:44308/api/carros";
-}
-
 function Validate(carro){
     return carro.nome !== "" && carro.valor !== "";
 }
