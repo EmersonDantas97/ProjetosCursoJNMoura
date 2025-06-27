@@ -4,5 +4,30 @@ function GetMenu(){
 }
 
 function GetURL(){
-    return "https://localhost:44360/api/Carros";
+    return "https://localhost:44308/api/carros";
+}
+
+function ShowMensagemErro(status) {
+    
+    if (status === 400) {
+        alert("Erro no envio de dados!");
+        return;
+    }
+
+    if (status === 404) {
+        alert("O registro não foi encontrado!");
+        return;
+    }
+
+    if (status === 500) {
+        alert("Erro interno de servidor! \n Entre em contato com o suporte.");
+        return;
+    }
+
+    if (status === -100){
+        alert("Erro na requisição! \n Entre em contato com o suporte.");
+        return;
+    }
+
+    alert("Erro na resposta! \n Entre em contato com o suporte.");
 }

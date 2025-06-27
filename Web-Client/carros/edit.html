@@ -28,6 +28,7 @@
         <h2 class="my-5 text-center">Edição de Carro</h2>
         
         <form action="">
+            <input id="id" type="hidden">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="nome" placeholder="Nome...">
                 <label for="nome">Nome</label>
@@ -37,7 +38,7 @@
                 <label for="valor">Valor</label>
             </div>
             <div class="my-5 text-center">
-                <button type="button" class="btn btn-primary" onclick="Alterar();">Alterar</button>
+                <button id="btnAlterar" type="button" class="btn btn-primary" onclick="Update();">Alterar</button>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
                 <button type="button" class="btn btn-secondary" onclick="GoToIndex();">Voltar</button>
             </div>

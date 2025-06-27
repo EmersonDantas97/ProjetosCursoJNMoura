@@ -6,35 +6,39 @@ function GoToCreate() {
     document.location = 'create.html';
 }
 
-function Delete(id) {
+function ConfirmDelete(id) {
     if (confirm(`Deseja excluir o carro ${id}?`)) {
-        const url = `${GetURL()}/${id}`;
-        fetch(url, {
-            method: "DELETE"
-        })
-            .then(
-                response => {
-                    if (response.ok) {
-                        Search();
-                        alert(`Carro excluído com sucesso: ${id}`);
-                    }
-                    else if (response.status === 400) {
-                        alert("Erro no envio de dados!");
-                    }
-                    else if (response.status === 500) {
-                        alert("Erro interno de servidor! \n Entre em contato com o suporte.");
-                    }
-                    else {
-                        alert("Erro na resposta! \n Entre em contato com o suporte.");
-                    }
-                }
-            )
-            .catch(
-                error => {
-                    alert("Erro na requisição! \n Entre em contato com o suporte.");
-                }
-            );
+        Delete(id);
     }
+}
+
+function Delete(id) {
+    const url = `${GetURL()}/${id}`;
+    RequestAPIDelete(url, id);
+}
+
+function RequestAPIDelete(url, id) {
+    fetch(url, {
+        method: "DELETE"
+    })
+        .then(
+            response => {
+
+                if (response.ok) {
+                    Search();
+                    alert(`Carro excluído com sucesso: ${id}`);
+                    return;
+                }
+
+                ShowMensagemErro(response.status);
+            }
+        )
+        .catch(
+            error => {
+                ShowMensagemErro(-100);
+            }
+        );
+
 }
 
 function EnableButtonPesquisar() {
@@ -75,46 +79,12 @@ function Search() {
 }
 
 function SearchById(id) {
-
     const url = `${GetURL()}/${id}`;
-
-    DisableButtonPesquisar();
-
-    fetch(url)
-        .then(
-            response => {
-                if (response.ok)
-                    return response.json();
-                if (response.status === 404)
-                    return null;
-            }
-        )
-        .then(
-            carro => {
-                let corpoTabela = "";
-                if (carro != null) {
-                    corpoTabela = `<tr><td>${carro.Id}</td><td>${carro.Nome}</td><td><a href="edit.html"><i class="bi bi-pencil"></i></a></td><td><a href="Javascript:Delete(${carro.Id});"><i class="bi bi-trash"></i></a></td></tr>`;
-                } else {
-                    corpoTabela = '<tr><td colspan=" " style="text-align:center">Carro não encontrado!</td></tr>';
-                }
-                GetBodyTabela().innerHTML = corpoTabela;
-            }
-        )
-        .catch(
-            error => {
-                alert("Erro na requisição! \n Entre em contato com o suporte.");
-            }
-        )
-        .finally(
-            () => {
-                EnableButtonPesquisar();
-            }
-        );
-
+    RequestAPI(url);
 }
 
 function SearchAll() {
-    const url = GetURL();
+    const url = `${GetURL()}/`;
     RequestAPI(url);
 }
 
@@ -123,14 +93,7 @@ function SearchByNome(nome) {
     RequestAPI(url);
 }
 
-function SearchById(id) {
-    const url = `${GetURL()}/${id}`;
-    RequestAPI(url);
-}
-
 function RequestAPI(url) {
-
-    //console.log("Início-Search");
 
     DisableButtonPesquisar();
 
@@ -141,30 +104,29 @@ function RequestAPI(url) {
                     return response.json();
                 if (response.status === 404)
                     return null;
+
+                ShowMensagemErro(response.status);
             }
         )
         .then(
-            conteudoResposta => { // Não é lista, é um array. 
+            conteudoResposta => {
 
-                let corpoTabela = "";
-                
+                if (conteudoResposta === null) {
+                    GetBodyTabela().innerHTML = GetCorpoTabelaParaCarroNaoEncontrado();
+                    return;
+                }
 
-                
+                if (Array.isArray(conteudoResposta)) {
+                    GetBodyTabela().innerHTML = GetCorpoTabelaParaCarros(conteudoResposta);
+                    return;
+                }
 
-
-
-
-
-                conteudoResposta.forEach(carro => {
-                    //console.log(carro);
-                    corpoTabela += `<tr><td>${carro.Id}</td><td>${carro.Nome}</td><td><a href="edit.html"><i class="bi bi-pencil"></i></a></td><td><a href="Javascript:Delete(${carro.Id});"><i class="bi bi-trash"></i></a></td></tr>`;
-                });
-                GetBodyTabela().innerHTML = corpoTabela;
+                GetBodyTabela().innerHTML = GetCorpoTabelaParaCarro(conteudoResposta);
             }
         )
         .catch(
             error => {
-                alert("Erro na requisição! \n Entre em contato com o suporte.");
+                ShowMensagemErro(-100);
             }
         )
         .finally(
@@ -172,6 +134,25 @@ function RequestAPI(url) {
                 EnableButtonPesquisar();
             }
         );
+}
 
-    //console.log("Fim-Search");
+function GetCorpoTabelaParaCarros(carros) {
+
+    if (carros.length > 0) {
+        let corpoTabela = "";
+        carros.forEach(carro => {
+            corpoTabela += GetCorpoTabelaParaCarro(carro);
+        });
+        return corpoTabela;
+    }
+
+    return GetCorpoTabelaParaCarroNaoEncontrado();
+}
+
+function GetCorpoTabelaParaCarro(carro) {
+    return `<tr><td>${carro.Id}</td><td>${carro.Nome}</td><td><a href="edit.html?id=${carro.Id}"><i class="bi bi-pencil"></i></a></td><td><a href="Javascript:ConfirmDelete(${carro.Id});"><i class="bi bi-trash"></i></a></td></tr>`;
+}
+
+function GetCorpoTabelaParaCarroNaoEncontrado() {
+    return '<tr><td colspan="4" style="text-align:center">Carro não encontrado!</td></tr>';
 }
