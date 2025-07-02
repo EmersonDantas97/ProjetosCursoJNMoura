@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\web\\web-api\\controllers\\carroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\carroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\web\\web-api\\repositories\\sqlserver\\carro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\repositories\\sqlserver\\carro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\controllers\\motoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\motoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\web\\web-api\\controllers\\carroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ED36D0E-AB48-495F-A4AC-55CC3D03E99D}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\carroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarrosController.cs",
-              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\CarrosController.cs",
-              "RelativeDocumentMoniker": "web-api\\Controllers\\CarrosController.cs",
-              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\CarrosController.cs",
-              "RelativeToolTip": "web-api\\Controllers\\CarrosController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwCYAAAAyAAAAAAAAAA==",
+              "Title": "Carro.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Repositories\\SQLServer\\Carro.cs",
+              "RelativeDocumentMoniker": "web-api\\Repositories\\SQLServer\\Carro.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Repositories\\SQLServer\\Carro.cs",
+              "RelativeToolTip": "web-api\\Repositories\\SQLServer\\Carro.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAiwKsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:20:26.048Z",
+              "WhenOpened": "2025-07-02T19:36:39.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MotosController.cs",
-              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\MotosController.cs",
-              "RelativeDocumentMoniker": "web-api\\Controllers\\MotosController.cs",
-              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\MotosController.cs",
-              "RelativeToolTip": "web-api\\Controllers\\MotosController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAuwDgAAAAbAAAAAAAAAA==",
+              "Title": "CarrosController.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\CarrosController.cs",
+              "RelativeDocumentMoniker": "web-api\\Controllers\\CarrosController.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Web\\web-api\\Controllers\\CarrosController.cs",
+              "RelativeToolTip": "web-api\\Controllers\\CarrosController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:19:37.078Z",
+              "WhenOpened": "2025-07-02T19:36:40.079Z",
               "EditorCaption": ""
             }
           ]

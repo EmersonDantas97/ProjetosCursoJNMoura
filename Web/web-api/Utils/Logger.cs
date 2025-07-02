@@ -5,9 +5,16 @@ using System.Threading.Tasks;
 
 namespace web_api.Utils
 {
-    public static class Logger
+    public class Logger
     {
-        public static async Task RegistraLog(string path, Exception ex)
+        private readonly string logPath;
+
+        public Logger(string logPath)
+        {
+            this.logPath = logPath;
+        }
+
+        public async Task RegistraLog(Exception ex)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -19,7 +26,7 @@ namespace web_api.Utils
             sb.Append(ex.StackTrace);
             sb.Append("\n-----------------------------------------------");
 
-            using (StreamWriter sw = new StreamWriter(path, true))
+            using (StreamWriter sw = new StreamWriter(logPath, true))
             {
                 await sw.WriteAsync(sb.ToString());
             }

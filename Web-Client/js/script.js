@@ -4,7 +4,7 @@ function GetMenu(){
 }
 
 function GetURL(){
-    return "https://localhost:44308/api/carros";
+    return "https://localhost:44360/api/carros";
 }
 
 function ShowMensagemErro(status) {

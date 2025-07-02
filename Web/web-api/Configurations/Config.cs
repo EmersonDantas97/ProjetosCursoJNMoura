@@ -21,5 +21,15 @@ namespace web_api.Configurations
         {
             return System.Configuration.ConfigurationManager.ConnectionStrings[nome].ConnectionString;
         }
+
+        public static int GetCacheExpirationTime(string chave)
+        {
+            return Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings[chave]);
+        }
+
+        internal static string GetConnectionStringSQLServer()
+        {
+            return GetConnectionString();
+        }
     }
 }

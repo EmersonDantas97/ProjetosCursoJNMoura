@@ -1,19 +1,22 @@
 ﻿using System.Web.Http;
 using System;
 using System.Threading.Tasks;
+using web_api.Utils;
 
 namespace web_api.Controllers
 {
     public class CarrosController : ApiController
     {
-        private readonly string diretorioArqLogs;
-        private readonly Repositories.Carro repository;
+        readonly Logger logger;
+
+        private readonly Repositories.SQLServer.Carro repository;
 
         public CarrosController()
         {
-            this.diretorioArqLogs = Configurations.Config.GetLogPath();
+            logger = new Logger(Configurations.Config.GetLogPath());
 
-            this.repository = new Repositories.Carro(Configurations.Config.GetConnectionString("web_api"));
+            repository = new Repositories.SQLServer.Carro(Configurations.Config.GetConnectionStringSQLServer());
+            repository.CacheExpirationTime = Configurations.Config.GetCacheExpirationTime("cacheExpirationTimeInSeconds");
         }
 
         // GET: api/Carros
@@ -25,7 +28,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }
@@ -35,16 +38,13 @@ namespace web_api.Controllers
         [Route("api/Carros/{nome:alpha}")]
         public async Task<IHttpActionResult> Get(string nome)
         {
-            //if (nome.Length < 3)
-            //    return BadRequest("Informe no mínimo 3 caracteres para pesquisar um carro!");
-
             try
             { 
                 return Ok(await repository.GetByName(nome));
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }
@@ -64,7 +64,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }
@@ -80,11 +80,11 @@ namespace web_api.Controllers
             {
                 await repository.Add(carro);
 
-                return Ok();
+                return Ok(carro);
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }
@@ -111,7 +111,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }
@@ -131,7 +131,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                await logger.RegistraLog(ex);
 
                 return InternalServerError();
             }

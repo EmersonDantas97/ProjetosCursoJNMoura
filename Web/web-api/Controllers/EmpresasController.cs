@@ -53,7 +53,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                Utils.Logger.RegistraLog(_diretorioLog, ex);
+                //Utils.Logger.RegistraLog(_diretorioLog, ex);
 
                 return InternalServerError();
             }

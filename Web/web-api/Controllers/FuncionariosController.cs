@@ -36,7 +36,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(logPath, ex);
+                //await Utils.Logger.RegistraLog(logPath, ex);
 
                 return InternalServerError();
             }

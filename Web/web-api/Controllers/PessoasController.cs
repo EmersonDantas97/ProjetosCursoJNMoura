@@ -24,7 +24,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -44,7 +44,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -60,7 +60,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -80,7 +80,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -106,7 +106,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
@@ -126,7 +126,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
+                //await Utils.Logger.RegistraLog(diretorioArqLogs, ex);
 
                 return InternalServerError();
             }
