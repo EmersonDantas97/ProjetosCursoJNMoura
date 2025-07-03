@@ -84,3 +84,9 @@ D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\System.Numerics.V
 D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\System.Threading.Tasks.Extensions.xml
 D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\System.Web.Http.Cors.xml
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Models.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Models.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Repositories.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Utils.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Repositories.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\web-api\bin\Utils.pdb

@@ -61,7 +61,6 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -74,7 +73,6 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -112,46 +110,11 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\Config.cs" />
-    <Compile Include="Controllers\BrinquedosController.cs" />
     <Compile Include="Controllers\CarrosController.cs" />
-    <Compile Include="Controllers\ClientesController.cs" />
-    <Compile Include="Controllers\ContasController.cs" />
-    <Compile Include="Controllers\EmpresasController.cs" />
-    <Compile Include="Controllers\FuncionariosController.cs" />
-    <Compile Include="Controllers\MotosController.cs" />
-    <Compile Include="Controllers\MusicasController.cs" />
-    <Compile Include="Controllers\NomesController.cs" />
-    <Compile Include="Controllers\PessoasController.cs" />
-    <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Brinquedo.cs" />
-    <Compile Include="Models\Carro.cs" />
-    <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Conta.cs" />
-    <Compile Include="Models\Empresa.cs" />
-    <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\Moto.cs" />
-    <Compile Include="Models\Musica.cs" />
-    <Compile Include="Models\Nome.cs" />
-    <Compile Include="Models\Pessoa.cs" />
-    <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Entity\Carro.cs" />
-    <Compile Include="Repositories\Excel\Carro.cs" />
-    <Compile Include="Repositories\SQLServer\Carro.cs" />
-    <Compile Include="Repositories\ClienteRepository.cs" />
-    <Compile Include="Repositories\Funcionario.cs" />
-    <Compile Include="Repositories\FuncionarioRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\Moto.cs" />
-    <Compile Include="Repositories\MusicaRepository.cs" />
-    <Compile Include="Repositories\Pessoa.cs" />
-    <Compile Include="Repositories\ProdutoRepository.cs" />
-    <Compile Include="Utils\CacheService.cs" />
-    <Compile Include="Utils\ICacheService.cs" />
-    <Compile Include="Utils\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -164,6 +127,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{24173876-f57f-46a2-a542-f5ba07685f48}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{88849978-5acc-4218-a9cc-9e5b8eaa8f80}</Project>
+      <Name>Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{1a1defff-d371-4e3e-b451-40a281bb1e65}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,8 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\bin\Debug\Models.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\bin\Debug\Models.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\bin\Debug\System.ComponentModel.Annotations.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\obj\Debug\Models.csproj.Up2Date
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\obj\Debug\Models.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Models\obj\Debug\Models.pdb

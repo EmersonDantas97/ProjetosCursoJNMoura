@@ -150,7 +150,10 @@ function GetCorpoTabelaParaCarros(carros) {
 }
 
 function GetCorpoTabelaParaCarro(carro) {
-    return `<tr><td>${carro.Id}</td><td>${carro.Nome}</td><td><a href="edit.html?id=${carro.Id}"><i class="bi bi-pencil"></i></a></td><td><a href="Javascript:ConfirmDelete(${carro.Id});"><i class="bi bi-trash"></i></a></td></tr>`;
+
+    let valorFormatado = carro.Valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    return `<tr><td>${carro.Id}</td><td>${carro.Nome}</td><td>${valorFormatado}</td><td><a href="edit.html?id=${carro.Id}"><i class="bi bi-pencil"></i></a></td><td><a href="Javascript:ConfirmDelete(${carro.Id});"><i class="bi bi-trash"></i></a></td></tr>`;
 }
 
 function GetCorpoTabelaParaCarroNaoEncontrado() {

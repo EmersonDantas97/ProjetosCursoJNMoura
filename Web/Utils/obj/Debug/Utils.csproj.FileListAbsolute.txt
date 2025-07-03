@@ -1,0 +1,6 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\bin\Debug\Utils.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\bin\Debug\Utils.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\obj\Debug\Utils.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\obj\Debug\Utils.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Utils\obj\Debug\Utils.pdb

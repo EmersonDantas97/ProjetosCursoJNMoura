@@ -1,0 +1,11 @@
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Repositories.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Repositories.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Models.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Utils.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Models.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\bin\Debug\Utils.pdb
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\obj\Debug\Repositories.csproj.AssemblyReference.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\obj\Debug\Reposito.787EC4B2.Up2Date
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\obj\Debug\Repositories.dll
+D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Web\Repositories\obj\Debug\Repositories.pdb
