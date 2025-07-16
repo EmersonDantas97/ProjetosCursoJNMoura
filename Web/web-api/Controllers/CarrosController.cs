@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Utils;
+using Repositories;
 
 namespace web_api.Controllers
 {
@@ -9,7 +10,7 @@ namespace web_api.Controllers
     {
         readonly Logger logger;
 
-        private readonly Repositories.SQLServer.Carro repository;
+        private readonly IRepository<Models.Carro> repository;
 
         public CarrosController()
         {
@@ -24,7 +25,7 @@ namespace web_api.Controllers
         {
             try
             {
-                return Ok(await repository.GetAll());
+                return Ok(await repository.GetAllAsync());
             }
             catch (Exception ex)
             {
@@ -40,7 +41,7 @@ namespace web_api.Controllers
         {
             try
             { 
-                return Ok(await repository.GetByName(nome));
+                return Ok(await repository.GetByNameAsync(nome));
             }
             catch (Exception ex)
             {
@@ -55,7 +56,7 @@ namespace web_api.Controllers
         {
             try
             { 
-                Models.Carro carro = await repository.GetById(id);
+                Models.Carro carro = await repository.GetByIdAsync(id);
 
                 if (carro.Id == 0)
                     return NotFound();
@@ -78,7 +79,7 @@ namespace web_api.Controllers
 
             try
             {
-                await repository.Add(carro);
+                await repository.AddAsync(carro);
 
                 return Ok(carro);
             }
@@ -101,7 +102,7 @@ namespace web_api.Controllers
 
             try
             {
-                bool resposta = await repository.Update(carro);
+                bool resposta = await repository.UpdateAsync(carro);
 
                 if (!resposta)
                     return NotFound();
@@ -122,7 +123,7 @@ namespace web_api.Controllers
         {
             try
             {
-                bool resposta = await repository.Delete(id);
+                bool resposta = await repository.DeleteAsync(id);
 
                 if (!resposta)
                     return NotFound();

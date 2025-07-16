@@ -32,7 +32,7 @@ namespace Repositories.SQLServer
             CacheExpirationTime = 30;
         }
 
-        public async Task<List<Models.Carro>> GetAll()
+        public async Task<List<Models.Carro>> GetAllAsync()
         {
 
             List<Models.Carro> listaCarros;
@@ -72,7 +72,7 @@ namespace Repositories.SQLServer
             return listaCarros;
         }
 
-        public async Task<Models.Carro> GetById(int id)
+        public async Task<Models.Carro> GetByIdAsync(int id)
         {
             Models.Carro carro = new Models.Carro();
 
@@ -99,7 +99,7 @@ namespace Repositories.SQLServer
             return carro;
         }
 
-        public async Task<List<Models.Carro>> GetByName(string nome)
+        public async Task<List<Models.Carro>> GetByNameAsync(string nome)
         {
             List<Models.Carro> listaCarros = new List<Models.Carro>();
 
@@ -131,7 +131,7 @@ namespace Repositories.SQLServer
             return listaCarros;
         }
 
-        public async Task Add(Models.Carro carro)
+        public async Task AddAsync(Models.Carro carro)
         {
 
             using (conn)
@@ -153,7 +153,7 @@ namespace Repositories.SQLServer
             }
         }
 
-        public async Task<bool> Update(Models.Carro carro)
+        public async Task<bool> UpdateAsync(Models.Carro carro)
         {
             int linhasAfetadas = 0;
 
@@ -180,7 +180,7 @@ namespace Repositories.SQLServer
             return true;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             int linhasAfetadas = 0;
 

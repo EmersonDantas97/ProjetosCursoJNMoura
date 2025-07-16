@@ -12,32 +12,32 @@ namespace Repositories.Entity
         {
         }
 
-        public Task Add(Models.Carro value)
+        public Task AddAsync(Models.Carro value)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> Delete(int id)
+        public Task<bool> DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Models.Carro>> GetAll()
+        public Task<List<Models.Carro>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Models.Carro> GetById(int id)
+        public Task<Models.Carro> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Models.Carro>> GetByName(string nome)
+        public Task<List<Models.Carro>> GetByNameAsync(string nome)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> Update(Models.Carro value)
+        public Task<bool> UpdateAsync(Models.Carro value)
         {
             throw new NotImplementedException();
         }

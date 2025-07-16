@@ -1,0 +1,21 @@
+<app-header></app-header>
+<main class="container">
+<h2 class="my-5 text-center">Novo Carro</h2>
+
+<form action="">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="nome" placeholder="Nome...">
+        <label for="nome">Nome</label>
+    </div>
+    <div class="form-floating">
+        <input type="number" class="form-control" id="valor" placeholder="Valor...">
+        <label for="valor">Valor</label>
+    </div>
+    <div class="my-5 text-center">
+        <button id="btnIncluir" type="button" class="btn btn-primary" (click)="Add();">Incluir</button>
+        <button type="reset" class="btn btn-secondary">Limpar</button>
+        <button type="button" class="btn btn-secondary" (click)="GoToIndex();">Voltar</button>
+    </div>
+</form>
+</main>
+<app-footer></app-footer>
