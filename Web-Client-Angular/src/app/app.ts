@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', 
   imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-
 export class App {
-  protected title = 'Web-Client-Angular';
+  protected title = 'my-first-angular-app';
 }

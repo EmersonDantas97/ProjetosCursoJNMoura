@@ -1,17 +1,5 @@
 export interface CarroModel{
-
-    Id: number, // Torna undefined
+    Id: number,
     Nome: string,
-    Valor: number
-
+    Valor: number | string
 }
-
-// export class CarroModel{
-//     Id!: number; // Torna undefined
-//     Nome: string;
-//     Valor: number;
-//     constructor(){
-//         this.Nome = "";
-//         this.Valor = 0;
-//     }
-// }

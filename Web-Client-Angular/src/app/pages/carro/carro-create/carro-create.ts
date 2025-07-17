@@ -2,26 +2,39 @@ import { Component, inject } from '@angular/core';
 import { Header } from "../../../shared/header/header";
 import { Footer } from "../../../shared/footer/footer";
 import { Router } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { CarrosApi } from '../../../services/carros-api';
+import { FormsModule } from '@angular/forms';
+import { CarroModel } from '../../../models/carro-model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-carro-create',
-  imports: [Header, Footer],
+  imports: [Header, Footer, CommonModule, FormsModule],
   templateUrl: './carro-create.html',
   styleUrl: './carro-create.css'
 })
+
 export class CarroCreate {
 
-  // constructor(private readonly router: Router){
-  // }
+  private readonly router: Router = inject(Router);
+  private readonly CarrosApi$: CarrosApi = inject(CarrosApi); // $ indica observable no objeto.
 
-  private readonly router = inject(Router);
+  carro: CarroModel = { Id: 0, Nome: '', Valor: '' };
 
-  Add(){
-    this.router.navigate(['/carros'])
+  Add() {
+    this.CarrosApi$.Add(this.carro).subscribe({
+      next: (carro: CarroModel) => {
+        alert(`Carro ${carro.Id} incluído com sucesso!`)
+        this.GoToIndex();
+      },
+      error: (erro: any) => {
+        alert(`Erro ${erro} - Contate o suporte!`);
+      } 
+    });
   }
-  
-  GoToIndex(){
-    this.router.navigate(['/carros'])
+
+  GoToIndex() {
+    this.router.navigate(['/carros']);
   }
 }

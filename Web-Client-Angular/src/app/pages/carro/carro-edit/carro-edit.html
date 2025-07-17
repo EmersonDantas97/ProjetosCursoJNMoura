@@ -1,6 +1,7 @@
 <app-header></app-header>
+
 <main class="container">
-    <h2 class="my-5 text-center">Novo Carro</h2>
+    <h2 class="my-5 text-center">Editar Carro</h2>
     
     <form action="">
         <div class="form-floating mb-3">
@@ -12,10 +13,10 @@
             <label for="valor">Valor</label>
         </div>
         <div class="my-5 text-center">
-            <button id="btnIncluir" type="button" class="btn btn-primary me-2" (click)="Add();">Incluir</button>
-            <button type="reset" class="btn btn-secondary me-2">Limpar</button>
+            <button id="btnIncluir" type="button" class="btn btn-primary me-2" (click)="Update();">Alterar</button>
             <button type="button" class="btn btn-secondary" (click)="GoToIndex();">Voltar</button>
         </div>
     </form>
 </main>
+
 <app-footer></app-footer>
