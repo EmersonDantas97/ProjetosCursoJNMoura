@@ -5,17 +5,17 @@
             <label for="" class="col-form-label">Id:</label>
         </div>
         <div class="col-auto">
-            <input type="number" id="id" class="form-control">
+            <input type="number" name="id" class="form-control" [(ngModel)]="this.id">
         </div>
         <div class="col-auto">
             <label for="" class="col-form-label">Nome:</label>
         </div>
         <div class="col-auto">
-            <input type="text" id="nome" class="form-control">  
+            <input type="text" name="nome" class="form-control" [(ngModel)]="this.nome">  
         </div>
         <div class="col-auto">
-            <button id="btnPesquisar" type="button" class="btn btn-primary" (click)="Search()">Pesquisar</button>
-            <button type="button" class="btn btn-success" (click)="GoToCreate();">Novo</button>
+            <button id="btnPesquisar" type="button" class="btn btn-primary me-2" (click)="Search()">Pesquisar</button>
+            <button type="button" class="btn btn-success me-2" (click)="GoToCreate();">Novo</button>
         </div>
     </form>
     <h2 class="my-5 text-center">Lista de Carros</h2>
@@ -27,11 +27,12 @@
                 <th colspan="2"></th>
             </tr>
         </thead>
-        <tbody id="corpo-tabela">
+        <tbody>                
             <tr *ngFor="let carro of this.carros">
-                <td><a routerLink="/carros/edit/{{carro.Id}}">{{carro.Id}}</a></td>
+                <td>{{carro.Id}}</td>
                 <td>{{carro.Nome}}</td>
-                <td>{{carro.Valor}}</td>
+                <td><a routerLink="/carros/edit/{{carro.Id}}"><i class="bi bi-pencil"></i></a></td>
+                <td><a (click)="ConfirmDelete(carro.Id)"><i class="bi bi-trash"></i></a></td>
             </tr>
         </tbody>
     </table>

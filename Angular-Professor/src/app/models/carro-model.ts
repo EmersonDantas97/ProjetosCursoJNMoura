@@ -1,5 +1,5 @@
-export interface CarroModel {
+export interface CarroModel{
     Id: number,
     Nome: string,
-    Valor: number
+    Valor: number | string
 }
