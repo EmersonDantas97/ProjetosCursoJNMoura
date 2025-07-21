@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { CarrosApi } from '../../../services/carros-api';
 import { FormsModule } from '@angular/forms';
 import { CarroModel } from '../../../models/carro-model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-carro-create',
