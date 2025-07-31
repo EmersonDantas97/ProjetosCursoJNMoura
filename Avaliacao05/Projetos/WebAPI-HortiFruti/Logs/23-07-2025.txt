@@ -1,0 +1,6 @@
+
+Data: 2025-07-23 09:33:03
+Mensagem: O método ou a operação não está implementada.
+StackTrace:    em WebAPI_HortiFruti.Repositories.SQLServer.Fruta.GetAllAsync() na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao05\Projetos\WebAPI-HortiFruti\WebAPI-HortiFruti\Repositories\SQLServer\Fruta.cs:linha 70
+   em WebAPI_HortiFruti.Controllers.FrutasController.<Get>d__3.MoveNext() na D:\EMERSON\Curso JN Moura\ProjetosCursoJNMoura\Avaliacao05\Projetos\WebAPI-HortiFruti\WebAPI-HortiFruti\Controllers\FrutasController.cs:linha 33
+------------------------------------------------------------

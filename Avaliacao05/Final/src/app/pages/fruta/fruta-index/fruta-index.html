@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<main class="container">
+    <form class="row justify-content-md-center">
+        <div class="col-auto">
+            <label for="" class="col-form-label">Id:</label>
+        </div>
+        <div class="col-auto">
+            <input type="number" name="id" class="form-control" [(ngModel)]="this.id">
+        </div>
+        <div class="col-auto">
+            <label for="" class="col-form-label">Nome:</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="nome" class="form-control" [(ngModel)]="this.nome">
+        </div>
+        <div class="col-auto">
+            <button id="btnPesquisar" type="button" class="btn btn-primary me-2" (click)="Search()">Pesquisar</button>
+            <button type="button" class="btn btn-success me-2" (click)="GoToCreate();">Novo</button>
+        </div>
+    </form>
+    <h2 class="my-5 text-center">Lista de Frutas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fruta of this.frutas">
+                <td>{{fruta.Id}}</td>
+                <td>{{fruta.Nome}}</td>
+                <td><a routerLink="/frutas/edit/{{fruta.Id}}"><i class="bi bi-pencil"></i></a></td>
+                <td><a (click)="ConfirmDelete(fruta.Id)"><i class="bi bi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<app-footer></app-footer>

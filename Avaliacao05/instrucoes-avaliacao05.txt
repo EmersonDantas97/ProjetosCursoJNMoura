@@ -1,0 +1,95 @@
+Passo 1
+
+SGBD criar um banco de dados chamado Hortifruti.
+Tabela Frutas - Id (Int), Nome (Varchar(100)) e DataVenc (Date)
+
+script-hortifruti.sql
+
+Passo 2
+
+.Net Framework Web API
+
+Controlador de Frutas (Construtor, Get, Get(id), Get(nome) Post, Put e Delete)
+
+Validar o estado do modelo (ModelState) nos métodos Post e Put
+Parâmetro string de conexão deve estar no Web.config e sua leitura deve ser realizada pela classe Config
+
+Models
+Classe Fruta
+Validar o modelo com DataAnottations, utilizando a notação [Required] em todos os dados, exceto Id.
+Os dados do tipo texto têm que ser validados mediante ao número máximo de caracteres permitidos
+
+Repositories 
+Generico (Interface)
+Frutas - (Construtor,
+GetAll, GetById, GetByName, Add, Update e Delete)
+
+Utils 
+Logger
+Cache
+
+Entrega
+
+WebAPI-HortiFruti
+	Configurations
+		Config.cs
+	Controller
+		FrutasController.cs
+	Models
+		IFruta.cs
+		Fruta.cs
+	Repositories
+		IRepository
+		Fruta.cs
+	Utils
+		ICache.cs
+		Cache.cs
+		ILogger.cs
+		Logger.cs
+
+FrontEnd - src
+	Src do projeto HortiFruti Angular 20
+	models
+		fruta-model.ts
+	pages
+		fruta
+			fruta-index
+			fruta-create
+			fruta-edit
+		home
+	shared
+		menu
+		header
+		footer
+	services
+		fruta-api
+	environments
+		.ts
+		.development.ts
+
+
+Final - ZIP - Grupo0X.zip => X = 1 ou X = 2
+	script-hortifruti.sql
+	WebAPI-HortiFruti
+	src
+	integrantes.txt => nomes completos em ordem alfabética.
+
+
+Grupos
+	Lucas - Grupo01
+	Emerson - Grupo02
+
+
+
+***************************************
+
+
+https://drive.google.com/file/d/1JA5oFMAq_T4zbv-Q5lMwMu7Li2TWA4at/view?usp=sharing
+
+
+Cache
+StringConexao
+LogPth
+
+\n
+

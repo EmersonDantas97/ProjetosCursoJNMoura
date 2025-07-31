@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<main class="container">
+
+    <h2 class="my-5 text-center">Editar Fruta</h2>
+
+    <form action="">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome..."
+                [(ngModel)]="this.fruta.Nome">
+            <label for="nome">Nome</label>
+        </div>
+        <div class="form-floating">
+            <input type="date" class="form-control" id="datavenc" name="datavenc" placeholder="Data Vencimento..."
+                [(ngModel)]="this.dataVencFormatada">
+            <label for="datavenc">Data de Vencimento</label>
+        </div>
+        <div class="my-5 text-center">
+            <button id="btnIncluir" type="button" class="btn btn-primary me-2" (click)="Update();">Alterar</button>
+            <button type="reset" class="btn btn-secondary me-2">Limpar</button>
+            <button type="button" class="btn btn-secondary me-2" (click)="GoToIndex();">Voltar</button>
+        </div>
+    </form>
+    
+</main>
+
+<app-footer></app-footer>

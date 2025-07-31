@@ -1,0 +1,98 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\webapi-hortifruti\\models\\fruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|solutionrelative:webapi-hortifruti\\models\\fruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\webapi-hortifruti\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|solutionrelative:webapi-hortifruti\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|d:\\emerson\\curso jn moura\\projetoscursojnmoura\\avaliacao05\\projetos\\webapi-hortifruti\\webapi-hortifruti\\controllers\\frutascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|solutionrelative:webapi-hortifruti\\controllers\\frutascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\webapi-hortifruti\\repositories\\sqlserver\\fruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8991FFF6-7BF4-45EB-809B-7776DF449814}|WebAPI-HortiFruti\\WebAPI-HortiFruti.csproj|solutionrelative:webapi-hortifruti\\repositories\\sqlserver\\fruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 84,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrutasController.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Controllers\\FrutasController.cs",
+              "RelativeDocumentMoniker": "WebAPI-HortiFruti\\Controllers\\FrutasController.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Controllers\\FrutasController.cs",
+              "RelativeToolTip": "WebAPI-HortiFruti\\Controllers\\FrutasController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAI4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:52:52.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "WebAPI-HortiFruti\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "WebAPI-HortiFruti\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T14:29:26.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Fruta.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Models\\Fruta.cs",
+              "RelativeDocumentMoniker": "WebAPI-HortiFruti\\Models\\Fruta.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Models\\Fruta.cs",
+              "RelativeToolTip": "WebAPI-HortiFruti\\Models\\Fruta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:47:06.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Fruta.cs",
+              "DocumentMoniker": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Repositories\\SQLServer\\Fruta.cs",
+              "RelativeDocumentMoniker": "WebAPI-HortiFruti\\Repositories\\SQLServer\\Fruta.cs",
+              "ToolTip": "D:\\EMERSON\\Curso JN Moura\\ProjetosCursoJNMoura\\Avaliacao05\\Projetos\\WebAPI-HortiFruti\\WebAPI-HortiFruti\\Repositories\\SQLServer\\Fruta.cs",
+              "RelativeToolTip": "WebAPI-HortiFruti\\Repositories\\SQLServer\\Fruta.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T12:01:10.602Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 84,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
